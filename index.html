@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moto Partes Rivera</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+
+    <!-- Navbar superior -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="img/logo.png" alt="Logo" class="me-2">
+
+
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <!-- Buscador -->
+                <form class="d-flex mx-auto" style="max-width: 500px;">
+                    <!-- <input class="form-control me-2" type="search" placeholder="Buscar productos">
+          <button class="btn btn-primary" type="submit">Buscar</button>-->
+                </form>
+
+                <!-- Íconos -->
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#"><i class="bi bi-person"></i></a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#"><i class="bi bi-heart"></i></a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link position-relative" href="#">
+                            <i class="bi bi-cart"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menú de categorías -->
+<div class="menu-categorias">
+    <a href="index.html">INICIO</a>
+
+    <!-- Dropdown Refacciones -->
+    <div class="dropdown">
+        <a href="#">REFACCIONES</a>
+        <div class="dropdown-content">
+            <a href="pedalesyposapies.html">Pedales y Posapies</a>
+            
+
+        </div>
+    </div>
+
+    <a href="#">LLANTAS</a>
+    <a href="#">ACEITES Y LUBRICANTES</a>
+    <a href="#" class="outlet"><i class="bi bi-lightning-fill"></i> OUTLET</a>
+    <a href="sucursales.html">SUCURSALES</a>
+    
+</div>
+
+    <!-- Banner promocional debajo de la navbar -->
+    <div class="banner-promocional">
+        <img src="img/Banner1.png" alt="Promoción Moto Partes Rivera" class="img-fluid w-100">
+    </div>
+
+    <!-- Sección de bienvenida -->
+    <section class="bg-light">
+        <!-- Banner de Principal -->
+    <div class="mb-4">
+      <img src="img/pxfuel.png" alt="Banner Principal" class="img-fluid">
+    </div>
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold">Bienvenido</h1>
+            <p class="lead">Encuentra refacciones, llantas, aceites y más para tu motocicleta.</p>
+            <a href="#" class="btn btn-primary btn-lg">Explorar catálogo</a>
+        </div>
+    </section>
+
+
+
+<!-- Sección de catálogo -->
+<section class="catalogo py-5">
+    <div class="container">
+        <!-- Banner de ACEITES -->
+        <div class="banner-aceites text-center">
+            <img src="img/banneraceites.png" alt="Banner Aceites" class="img-fluid">
+        </div>
+
+        <h2 class="text-center mb-4">Aceites Originales</h2>
+
+        <!-- Filtros de marcas -->
+        <div class="d-flex justify-content-center flex-wrap gap-3 mb-4">
+            <!--<button class="btn btn-outline-primary" data-filtro="todos">Todos</button>  opcional -->
+
+            <button class="btn btn-outline-primary active" data-filtro="motul">Motul</button>
+                <button class="btn btn-outline-primary" data-filtro="repsol">Repsol</button>
+                <button class="btn btn-outline-primary" data-filtro="liqui">Liqui Moly</button>
+                <button class="btn btn-outline-primary" data-filtro="yamalube">Yamalube</button>
+                <button class="btn btn-outline-primary" data-filtro="bajaj">Bajaj</button>
+
+            </div>
+
+
+            <!-- Productos -->
+            <div class="row g-4">
+
+                <!-- Productos MOTUL -->
+                <div class="col-md-4 col-sm-6 producto" data-marca="motul">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-23%</div>
+                        <img src="img/AceiteMotul20W50H500.png" class="card-img-top" alt="Aceite Motul 20W50">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite Motul 20W50 H 5000</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$227.50</p>
+                            <p class="card-text fw-bold text-success">$175.00</p>
+                            <a href="producto.html?id=motul-20w50" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 producto" data-marca="motul">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-23%</div>
+                        <img src="img/AceiteMotul20W507100.png" class="card-img-top" alt="Aceite Motul 20W50">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite Motul 20W50 H 7100</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$227.50</p>
+                            <p class="card-text fw-bold text-success">$175.00</p>
+                            <a href="producto.html?id=motul-20w50" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4 col-sm-6 producto" data-marca="motul">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-23%</div>
+                        <img src="img/AceiteMotul10W407100..png" class="card-img-top" alt="Aceite Motul 10W40">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite Motul 10W40 H 7100</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$227.50</p>
+                            <p class="card-text fw-bold text-success">$175.00</p>
+                            <a href="producto.html?id=motul-20w50" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Producto Repsol -->
+                <div class="col-md-4 col-sm-6 producto" data-marca="repsol">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-20%</div>
+                        <img src="img/AceiteRepsol20W50.png" class="card-img-top" alt="Aceite Repsol 10W40">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite Repsol 10W40 Sintético</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$310.00</p>
+                            <p class="card-text fw-bold text-success">$248.00</p>
+                            <a href="producto.html?id=repsol-10w40" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-6 producto" data-marca="repsol">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-20%</div>
+                        <img src="img/AceiteRepsol10W40SemisinteticoSport.png" class="card-img-top"
+                            alt="Aceite Repsol 10W40">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite de Motor Repsol 10W40 Semisintetico Sport</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$310.00</p>
+                            <p class="card-text fw-bold text-success">$248.00</p>
+                            <a href="producto.html?id=repsol-10w40" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-6 producto" data-marca="repsol">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-20%</div>
+                        <img src="img/AceiteSuspensionRepsol10WForkOil.png" class="card-img-top"
+                            alt="Aceite Repsol 10W40">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite de Suspension Repsol 10W Fork Oil</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$310.00</p>
+                            <p class="card-text fw-bold text-success">$248.00</p>
+                            <a href="producto.html?id=repsol-10w40" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Productos Liqui Moly -->
+                <div class="col-md-4 col-sm-6 producto" data-marca="liqui">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-20%</div>
+                        <img src="img/AceiteMotorLiquiMoly20W50MineralStreet.png" class="card-img-top"
+                            alt="Aceite Repsol 10W40">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite de Motor Liqui Moly 20W50 Mineral Street</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$310.00</p>
+                            <p class="card-text fw-bold text-success">$248.00</p>
+                            <a href="producto.html?id=repsol-10w40" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 producto" data-marca="liqui">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-20%</div>
+                        <img src="img/AceiteLiquiMoly10W40SemisinteticoStreet.png" class="card-img-top"
+                            alt="Aceite Repsol 10W40">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite de Motor Liqui Moly 10W40 Semisintetico Street</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$310.00</p>
+                            <p class="card-text fw-bold text-success">$248.00</p>
+                            <a href="producto.html?id=repsol-10w40" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Productos Bajaj -->
+                <div class="col-md-4 col-sm-6 producto" data-marca="bajaj">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-20%</div>
+                        <img src="img/AceiteMotorBajaj 20W50Mineral1.2Litros.png" class="card-img-top"
+                            alt="Aceite Repsol 10W40">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite de Motor Bajaj 20W50 Mineral 1.2 Litros</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$310.00</p>
+                            <p class="card-text fw-bold text-success">$248.00</p>
+                            <a href="producto.html?id=repsol-10w40" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-6 producto" data-marca="bajaj">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-20%</div>
+                        <img src="img/AceiteMotorBajaj10W50 Sintetico1Litro.png" class="card-img-top"
+                            alt="Aceite Repsol 10W40">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite de Motor Bajaj 10W50 Sintetico 1 Litro</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$310.00</p>
+                            <p class="card-text fw-bold text-success">$248.00</p>
+                            <a href="producto.html?id=repsol-10w40" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Productos yamalube-->
+                <div class="col-md-4 col-sm-6 producto" data-marca="yamalube">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-absolute top-0 start-0 bg-primary text-white px-2 py-1 small">-20%</div>
+                        <img src="img/Aceite de Motor Yamalube 20W50 Mineral.png" class="card-img-top"
+                            alt="Aceite Repsol 10W40">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite de Motor Yamalube 20W50 Mineral</h5>
+                            <p class="card-text text-muted text-decoration-line-through">$310.00</p>
+                            <p class="card-text fw-bold text-success">$248.00</p>
+                            <a href="producto.html?id=repsol-10w40" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!--SCRIPT PARA FILTRAR EN EL APARTADO DE ACEITES POR MARCA-->
+                <script>
+                    const botones = document.querySelectorAll('[data-filtro]');
+                    const productos = document.querySelectorAll('.producto');
+
+                    // Mostrar solo Motul al inicio
+                    productos.forEach(producto => {
+                        const marcaProducto = producto.getAttribute('data-marca');
+                        if (marcaProducto !== "motul") {
+                            producto.classList.add('oculto');
+                        }
+                    });
+
+                    botones.forEach(boton => {
+                        boton.addEventListener('click', () => {
+                            botones.forEach(b => b.classList.remove('active'));
+                            boton.classList.add('active');
+
+                            const marcaSeleccionada = boton.getAttribute('data-filtro');
+
+                            productos.forEach(producto => {
+                                const marcaProducto = producto.getAttribute('data-marca');
+
+                                if (marcaProducto === marcaSeleccionada) {
+                                    producto.classList.remove('oculto');
+                                } else {
+                                    producto.classList.add('oculto');
+                                }
+                            });
+                        });
+                    });
+                </script>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!--  más tarjetas aquí de ser necesario preguntar a tiglat-->
+
+
+
+    <!--APARTADO DE RINES     ----------------------------------------------------------------------        -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <!-- Banner de llantas -->
+        <div class="banner-llantas text-center">
+            <img src="img/bannerllantas.png" alt="Banner Llantas" class="img-fluid">
+        </div>
+        <h2 class="text-center mb-4">¡LLANTAS A TU MEDIDA!</h2>
+
+        <!-- Botones de filtro -->
+        <div class="d-flex justify-content-center mb-4 flex-wrap gap-2">
+            <button class="btn btn-outline-dark active" data-rin="19">Rin 19</button>
+            <button class="btn btn-outline-dark" data-rin="21">Rin 21</button>
+            </div>
+            
+            <!-- Productos -->
+            <div class="col-md-4 mb-4 producto-rin" data-rin="19">
+                <div class="card h-100 shadow-sm">
+                    <img src="img/Llanta Bridgestone Battlax Adventure AX41 11080B-19 Delantera Sellomatic.webp" class="card-img-top"
+                        alt="Llanta Bridgestone Battlax Adventure AX41 110/80B-19 Delantera Sellomatic">
+                    <div class="card-body">
+                        <h5 class="card-title">Llanta Bridgestone Battlax Adventure AX41</h5>
+                        <p class="card-text">110/80B-19 Delantera Sellomatic</p>
+            
+                        <!-- Precios -->
+                        <p class="mb-1">
+                            <span class="text-muted text-decoration-line-through">$4,547.40</span>
+                            <span class="fw-bold text-success ms-2">$3,498.00</span>
+                        </p>
+                        <p class="text-danger fw-bold">AHORRAS $1,049.40</p>
+            
+                        <!-- Detalles -->
+                        <ul class="list-unstyled small">
+                            <li><strong>Marca:</strong> Bridgestone</li>
+                            <li><strong>Tipo:</strong> Llantas</li>
+                            <li><strong>SKU:</strong> L19-110/80B-ADVCROSS-AX41-F/B</li>
+                        </ul>
+            
+                        <button class="btn btn-primary w-100">Ver más</button>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-md-4 mb-4 producto-rin" data-rin="21">
+                        <div class="card h-100 shadow-sm">
+                            <img src="img/Llanta Pirelli Scorpion Rally Str 9090-21 Delantera.png" class="card-img-top"
+                                alt="Llanta Pirelli Scorpion Rally STR 90/90-21 Delantera">
+                            <div class="card-body">
+                                <h5 class="card-title">Llanta Pirelli Scorpion Rally STR</h5>
+                                <p class="card-text">90/90-21 Delantera</p>
+                    
+                                <!-- Precios -->
+                                <p class="mb-1">
+                                    <span class="text-muted text-decoration-line-through">$4,915.30</span>
+                                    <span class="fw-bold text-success ms-2">$3,781.00</span>
+                                </p>
+                                <p class="text-danger fw-bold">AHORRAS $1,134.30</p>
+                    
+                                <!-- Detalles -->
+                                <ul class="list-unstyled small">
+                                    <li><strong>Marca:</strong> Pirelli</li>
+                                    <li><strong>Tipo:</strong> Llantas</li>
+                                    <li><strong>SKU:</strong> L21-090/90-S-R-STR/P</li>
+                                </ul>
+                    
+                                <button class="btn btn-primary w-100">Ver más</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    </div>
+                
+                <script>
+                const botonesRin = document.querySelectorAll('[data-rin]');
+                const productosRin = document.querySelectorAll('.producto-rin');
+
+                // Mostrar solo Rin 19 al inicio
+                productosRin.forEach(producto => {
+                    if (producto.getAttribute('data-rin') !== "19") {
+                        producto.classList.add('oculto');
+                    }
+                });
+
+                botonesRin.forEach(boton => {
+                    boton.addEventListener('click', () => {
+                        botonesRin.forEach(b => b.classList.remove('active'));
+                        boton.classList.add('active');
+
+                        const rinSeleccionado = boton.getAttribute('data-rin');
+
+                        productosRin.forEach(producto => {
+                            if (producto.getAttribute('data-rin') === rinSeleccionado) {
+                                producto.classList.remove('oculto');
+                            } else {
+                                producto.classList.add('oculto');
+                            }
+                        });
+                    });
+                });
+            </script>
+
+
+
+
+            <!-- Puedes agregar más productos aquí -->
+        </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light pt-5 pb-4 mt-5 border-top">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Empresa -->
+                <div class="col-md-3">
+                    <h5 class="text-uppercase fw-bold">Moto Partes Rivera</h5>
+                    Avenida 16 de Septiembre 2716, Puebla, Mexico, 72530</p>
+                    <p>
+                    <p>Email: motopartesrivera@hotmail.com</p>
+                    <p>Tel: 221 189 7589</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank"
+                            class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="https://www.instagram.com/motopartes_rivera/" target="_blank" class="text-light"><i
+                                class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Sobre nosotros -->
+                <div class="col-md-2">
+                    <h6 class="fw-bold">Sobre nosotros</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Nuestra empresa</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Sucursales</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Trabaja con nosotros</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Ventas a mayoreo</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Políticas -->
+                <div class="col-md-2">
+                    <h6 class="fw-bold">Políticas</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Términos y condiciones</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Aviso de privacidad</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Métodos de pago</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Garantía</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Devoluciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Ayuda -->
+                <div class="col-md-2">
+                    <h6 class="fw-bold">Ayuda</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Preguntas frecuentes</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Rastreo de pedido</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Reportar problema</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Facturación</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Ofertas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Suscripción -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold">Suscríbete</h6>
+                    <p>Recibe promociones, novedades y ofertas exclusivas directamente en tu correo.</p>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico">
+                            <button class="btn btn-primary" type="submit">Suscribirme</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <hr class="border-light mt-4">
+            <p class="text-center mb-0">&copy; 2025 Moto Partes Rivera. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

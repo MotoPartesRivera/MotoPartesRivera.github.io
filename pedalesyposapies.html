@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto | Moto Partes Rivera</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Tus CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/productos.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="img/logo.png" alt="Logo" class="me-2">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto d-flex align-items-center">
+          <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+          <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
+          <li class="nav-item mx-2">
+            <a class="nav-link position-relative" href="#">
+              <i class="bi bi-cart"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menú de categorías -->
+  <div class="menu-categorias">
+    <a href="index.html">INICIO</a>
+    <div class="dropdown">
+      <a href="#">REFACCIONES</a>
+      <div class="dropdown-content">
+        <a href="pedalesyposapies.html">Pedales y Posapies</a>
+      </div>
+    </div>
+    <a href="#">LLANTAS</a>
+    <a href="#">ACEITES Y LUBRICANTES</a>
+    <a href="#" class="outlet"><i class="bi bi-lightning-fill"></i> OUTLET</a>
+    <a href="sucursales.html">SUCURSALES</a>
+  </div>
+
+  <!-- Producto estilo Amazon -->
+  <div class="producto-card">
+    <!-- Columna izquierda: galería -->
+    <div class="galeria">
+      <div class="miniaturas">
+        <img src="img/parador1.png" alt="Vista 1" class="thumb">
+        <img src="img/parador2.png" alt="Vista 2" class="thumb">
+        <img src="img/parador3.png" alt="Vista 3" class="thumb">
+      </div>
+      <div class="imagen-principal">
+        <img id="imagen-grande" src="img/parador1.png" alt="Producto principal">
+      </div>
+    </div>
+
+    <!-- Columna derecha: info -->
+    <div class="producto-info">
+      <h2 class="producto-titulo">Soporte / Parador</h2>
+
+      <!-- Marca -->
+      <label for="marca">Elegir Marca:</label>
+      <select id="marca" class="form-select mb-2">
+        <option value="ITALIKA">ITALIKA</option>
+        <option value="MASUDA">MASUDA</option>
+        <option value="VENTO">VENTO</option>
+      </select>
+
+      <!-- Modelo -->
+      <label for="modelo">Elegir Modelo:</label>
+      <select id="modelo" class="form-select mb-2">
+        <option value="F11020160" data-precio="325">F11020160</option>
+        <option value="F11020122" data-precio="185">F11020122</option>
+        <option value="F11020160-W" data-precio="215">F11020160-W</option>
+        <option value="F11020223" data-precio="315">F11020223</option>
+        <option value="F11020196" data-precio="275">F11020196</option>
+        <option value="F11020063" data-precio="365">F11020063</option>
+        <option value="F11020184" data-precio="105">F11020184</option>
+        <option value="F11020023" data-precio="97">F11020023</option>
+        <option value="F11020222" data-precio="134">F11020222</option>
+        <option value="F11020062" data-precio="133">F11020062</option>
+        <option value="F11020137" data-precio="275">F11020137</option>
+        <option value="F11020117" data-precio="230">F11020117</option>
+        <option value="F11020025" data-precio="125">F11020025</option>
+        <option value="POS-1616-1210" data-precio="90">POS-1616-1210</option>
+        <option value="POS-1616-1218" data-precio="85">POS-1616-1218</option>
+
+
+      </select>
+
+      <!-- Tipo de parador -->
+      <label for="tipo">Tipo de parador:</label>
+      <select id="tipo" class="form-select mb-2">
+        <option value="lateral">Lateral</option>
+        <option value="central">Central</option>
+      </select>
+
+      <!-- Precio dinámico -->
+      <p class="precio">Precio: $<span id="precio">368</span> MXN</p>
+
+      <!-- Botón WhatsApp -->
+      <button id="btn-consultar">Consultar disponibilidad</button>
+
+      <!-- Descripción -->
+      <p class="descripcion mt-3">
+        Parador para motocicleta, disponible en versiones lateral y central.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5 border-top">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Empresa -->
+        <div class="col-md-3">
+          <h5 class="text-uppercase fw-bold">Moto Partes Rivera</h5>
+          <p>Avenida 16 de Septiembre 2716, Puebla, Mexico, 72530</p>
+          <p>Email: motopartesrivera@hotmail.com</p>
+          <p>Tel: 221 189 7589</p>
+          <div class="d-flex gap-2">
+            <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+            <a href="https://www.instagram.com/motopartes_rivera/" target="_blank" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+          </div>
+        </div>
+        <!-- Sobre nosotros -->
+        <div class="col-md-2">
+          <h6 class="fw-bold">Sobre nosotros</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Nuestra empresa</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Sucursales</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Trabaja con nosotros</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Ventas a mayoreo</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+        <!-- Políticas -->
+        <div class="col-md-2">
+          <h6 class="fw-bold">Políticas</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Términos y condiciones</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Aviso de privacidad</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Métodos de pago</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Garantía</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Devoluciones</a></li>
+          </ul>
+        </div>
+        <!-- Ayuda -->
+        <div class="col-md-2">
+          <h6 class="fw-bold">Ayuda</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Preguntas frecuentes</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Rastreo de pedido</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Reportar problema</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Facturación</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Ofertas</a></li>
+          </ul>
+        </div>
+                <!-- Suscripción -->
+        <div class="col-md-3">
+          <h6 class="fw-bold">Suscríbete</h6>
+          <p>Recibe promociones, novedades y ofertas exclusivas directamente en tu correo.</p>
+          <form>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Tu correo electrónico">
+              <button class="btn btn-primary" type="submit">Suscribirme</button>
+            </div>
+          </form>
+        </div>
+      </div> <!-- cierre row -->
+      <hr class="border-light mt-4">
+      <p class="text-center mb-0">&copy; 2025 Moto Partes Rivera. Todos los derechos reservados.</p>
+    </div> <!-- cierre container -->
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Tu JS -->
+  <script src="js/producto.js"></script>
+</body>
+</html>
+
+        
