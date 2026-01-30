@@ -1,0 +1,206 @@
+.producto-card {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.producto-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.producto-titulo {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#btn-consultar {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.producto-card {
+  display: flex;              /* dos columnas */
+  gap: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.producto-img-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.producto-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.producto-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-titulo {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.precio {
+  font-size: 22px;
+  font-weight: bold;
+  color: #B12704; /* rojo estilo Amazon */
+  margin: 15px 0;
+}
+
+#btn-consultar {
+  background: #FFD814; /* amarillo Amazon */
+  color: #111;
+  border: 1px solid #FCD200;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  width: fit-content;
+}
+
+#btn-consultar:hover {
+  background: #F7CA00;
+}
+
+
+/* Contenedor principal del producto */
+.producto-card {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Galería: miniaturas + imagen principal */
+.galeria {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+}
+
+/* Miniaturas a la izquierda */
+.miniaturas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.miniaturas img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.miniaturas img:hover {
+  border-color: #0073e6;
+}
+
+/* Imagen principal */
+.imagen-principal img {
+  width: 350px;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Columna derecha: info */
+.producto-info {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-titulo {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.precio {
+  font-size: 22px;
+  font-weight: bold;
+  color: #B12704; /* rojo estilo Amazon */
+  margin: 15px 0;
+}
+
+/* Botón estilo Amazon */
+#btn-consultar {
+  background: #FFD814;
+  color: #111;
+  border: 1px solid #FCD200;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  width: fit-content;
+}
+
+#btn-consultar:hover {
+  background: #F7CA00;
+}
+
+/* Responsive: en móviles la galería se apila */
+@media (max-width: 768px) {
+  .producto-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .miniaturas {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .imagen-principal img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
