@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const modeloSelect = document.getElementById("modelo");
+  const productoSelect = document.getElementById("producto");
   const precioSpan = document.getElementById("precio");
   const btnConsultar = document.getElementById("btn-consultar");
   const thumbs = document.querySelectorAll(".thumb");
   const imagenGrande = document.getElementById("imagen-grande");
 
-  // Cambiar precio según modelo
-  modeloSelect.addEventListener("change", function() {
+  // Cambiar precio según producto
+  productoSelect.addEventListener("change", function() {
     const precio = this.options[this.selectedIndex].dataset.precio;
     precioSpan.textContent = precio;
   });
@@ -23,17 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Botón WhatsApp
   btnConsultar.addEventListener("click", function() {
-    const marca = document.getElementById("marca").value;
-    const modelo = modeloSelect.value;
-    const tipo = document.getElementById("tipo").value;
     const producto = document.querySelector(".producto-titulo").textContent;
+    const seleccion = productoSelect.value; // Ej: "ITALIKA-central-F11020160"
 
-    const mensaje = `Hola, me interesa el producto ${producto}, de marca ${marca}, modelo ${modelo}, tipo ${tipo}. ¿Se encuentra disponible?`;
+    // Dividir en partes: [marca, tipo, modelo]
+    const partes = seleccion.split("-");
+    const marca = partes[0];
+    const tipo = partes[1];
+    const modelo = partes.slice(2).join("-"); // por si el modelo tiene guiones
+
+    const mensaje = `Hola, me interesa el producto ${producto}, de marca ${marca}, tipo ${tipo}, modelo ${modelo}. ¿Se encuentra disponible?`;
     const numeroWhatsApp = "522211897589"; // tu número con código país
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, "_blank");
   });
 });
+
 
 
