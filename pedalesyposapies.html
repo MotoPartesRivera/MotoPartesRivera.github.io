@@ -73,45 +73,28 @@
     <div class="producto-info">
       <h2 class="producto-titulo">Soporte / Parador</h2>
 
-      <!-- Marca -->
-      <label for="marca">Elegir Marca:</label>
-      <select id="marca" class="form-select mb-2">
-        <option value="ITALIKA">ITALIKA</option>
-        <option value="MASUDA">MASUDA</option>
-        <option value="VENTO">VENTO</option>
-      </select>
-
-      <!-- Modelo -->
-      <label for="modelo">Elegir Modelo:</label>
-      <select id="modelo" class="form-select mb-2">
-        <option value="F11020160" data-precio="325">F11020160</option>
-        <option value="F11020122" data-precio="185">F11020122</option>
-        <option value="F11020160-W" data-precio="215">F11020160-W</option>
-        <option value="F11020223" data-precio="315">F11020223</option>
-        <option value="F11020196" data-precio="275">F11020196</option>
-        <option value="F11020063" data-precio="365">F11020063</option>
-        <option value="F11020184" data-precio="105">F11020184</option>
-        <option value="F11020023" data-precio="97">F11020023</option>
-        <option value="F11020222" data-precio="134">F11020222</option>
-        <option value="F11020062" data-precio="133">F11020062</option>
-        <option value="F11020137" data-precio="275">F11020137</option>
-        <option value="F11020117" data-precio="230">F11020117</option>
-        <option value="F11020025" data-precio="125">F11020025</option>
-        <option value="POS-1616-1210" data-precio="90">POS-1616-1210</option>
-        <option value="POS-1616-1218" data-precio="85">POS-1616-1218</option>
-
-
-      </select>
-
-      <!-- Tipo de parador -->
-      <label for="tipo">Tipo de parador:</label>
-      <select id="tipo" class="form-select mb-2">
-        <option value="lateral">Lateral</option>
-        <option value="central">Central</option>
+      <!-- Selector combinado -->
+      <label for="producto">Elegir producto:</label>
+      <select id="producto" class="form-select mb-2">
+        <option value="ITALIKA-central-F11020160" data-precio="325">ITALIKA - Central - F11020160</option>
+        <option value="ITALIKA-central-F11020122" data-precio="185">ITALIKA - Central - F11020122</option>
+        <option value="ITALIKA-central-F11020160-W" data-precio="215">ITALIKA - Central - F11020160-W</option>
+        <option value="ITALIKA-central-F11020223" data-precio="315">ITALIKA - Central - F11020223</option>
+        <option value="ITALIKA-central-F11020196" data-precio="275">ITALIKA - Central - F11020196</option>
+        <option value="ITALIKA-central-F11020063" data-precio="365">ITALIKA - Central - F11020063</option>
+        <option value="ITALIKA-central-F11020184" data-precio="105">ITALIKA - Central - F11020184</option>
+        <option value="ITALIKA-lateral-F11020023" data-precio="97">ITALIKA - Lateral - F11020023</option>
+        <option value="ITALIKA-lateral-F11020222" data-precio="134">ITALIKA - Lateral - F11020222</option>
+        <option value="ITALIKA-lateral-F11020062" data-precio="133">ITALIKA - Lateral - F11020062</option>
+        <option value="ITALIKA-lateral-F11020137" data-precio="275">ITALIKA - Lateral - F11020137</option>
+        <option value="ITALIKA-lateral-F11020117" data-precio="230">ITALIKA - Lateral - F11020117</option>
+        <option value="ITALIKA-lateral-F11020025" data-precio="125">ITALIKA - Lateral - F11020025</option>
+        <option value="MASUDA-lateral-POS-1616-1210" data-precio="90">MASUDA - Lateral - POS-1616-1210</option>
+        <option value="MASUDA-central-POS-1616-1218" data-precio="85">MASUDA - Central - POS-1616-1218</option>
       </select>
 
       <!-- Precio dinámico -->
-      <p class="precio">Precio: $<span id="precio">368</span> MXN</p>
+      <p class="precio">Precio: $<span id="precio">0</span> MXN</p>
 
       <!-- Botón WhatsApp -->
       <button id="btn-consultar">Consultar disponibilidad</button>
@@ -160,7 +143,7 @@
             <li><a href="#" class="text-light text-decoration-none">Devoluciones</a></li>
           </ul>
         </div>
-        <!-- Ayuda -->
+                <!-- Ayuda -->
         <div class="col-md-2">
           <h6 class="fw-bold">Ayuda</h6>
           <ul class="list-unstyled">
@@ -171,7 +154,8 @@
             <li><a href="#" class="text-light text-decoration-none">Ofertas</a></li>
           </ul>
         </div>
-                <!-- Suscripción -->
+
+        <!-- Suscripción -->
         <div class="col-md-3">
           <h6 class="fw-bold">Suscríbete</h6>
           <p>Recibe promociones, novedades y ofertas exclusivas directamente en tu correo.</p>
@@ -197,4 +181,5 @@
 </html>
 
         
+
 
