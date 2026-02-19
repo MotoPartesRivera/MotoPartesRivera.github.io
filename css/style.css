@@ -282,42 +282,4 @@ footer a:hover {
 }
 
 
-/* Estilo para las tarjetas de categorías */
-.category-card {
-    background: #ffffff;
-    border-radius: 15px;
-    border: 1px solid #eee;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
 
-.category-card:hover {
-    transform: translateY(-10px); /* Se eleva */
-    border-color: #007bff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-}
-
-.icon-box {
-    color: #007bff;
-    transition: transform 0.3s ease;
-}
-
-.category-card:hover .icon-box {
-    transform: scale(1.1); /* El icono crece un poco */
-}
-
-.btn-explore {
-    font-size: 0.85rem;
-    color: #6c757d;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.category-card:hover .btn-explore {
-    color: #007bff;
-}
-
-/* Estilo especial para el Outlet */
-.outlet-card:hover {
-    border-color: #ffc107;
-}
