@@ -81,47 +81,85 @@
 </div>
 
 
-    <footer class="bg-dark text-light pt-5 pb-4 mt-5 border-top">
-        <div class="container">
-            <div class="row g-4">
 
-                <!-- Sección de sucursal -->
-                <section class="bg-white py-5">
-                    <div class="container text-center">
+<div class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">CUBIERTAS Y PLÁSTICOS</h2>
+            <p class="text-muted">Selecciona el tipo de acabado que buscas</p>
+            <hr class="mx-auto" style="width: 60px; height: 3px; background: #007bff; opacity: 1;">
+        </div>
 
-                        <!-- Tarjeta con sombra -->
-                        <div class="card shadow mx-auto mb-4" style="max-width: 500px;">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Sucursal Principal</h5>
-                                <p class="card-text">
-                                    📍 <strong>Dirección:</strong><br>
-                                    Avenida 16 de Septiembre 2716, Puebla, México, 72530<br><br>
-                                    📞 <strong>Teléfono:</strong><br>
-                                    221 189 7589<br><br>
-                                    📧 <strong>Email:</strong><br>
-                                    motopartesrivera@hotmail.com<br><br>
-                                    📱 <strong>WhatsApp:</strong><br>
-                                    +52 1 221 189 7589
-                                </p>
-                            </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <a href="productos.html?sub=plasticos_base" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4 text-center">
+                        <div class="icon-box mb-3">
+                            <i class="bi bi-layers fs-1"></i>
                         </div>
-
-                        <!-- Mapa incrustado -->
-                        <h5 class="mb-3">Ubicación en el mapa</h5>
-                        <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.684645338753!2d-98.20742042395302!3d19.033612882162252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0c134c4ad07%3A0x350ee63f994087d4!2sC.%2016%20de%20Septiembre%202716%2C%20El%20Carmen%2C%2072530%20Heroica%20Puebla%20de%20Zaragoza%2C%20Pue.!5e0!3m2!1ses-419!2smx!4v1764668605741!5m2!1ses-419!2smx"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-
+                        <h5 class="fw-bold text-dark">PLÁSTICOS</h5>
+                        <p class="text-muted small">Componentes base y piezas estructurales</p>
+                        <span class="btn btn-outline-primary btn-sm mt-2">Ver productos</span>
                     </div>
-                </section>
+                </a>
+            </div>
 
+            <div class="col-md-4">
+                <a href="productos.html?sub=plasticos_color" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4 text-center border-primary">
+                        <div class="icon-box mb-3 text-danger">
+                            <i class="bi bi-palette fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark">PLÁSTICOS DE COLOR</h5>
+                        <p class="text-muted small">Carenados, tapas laterales y frontales con color</p>
+                        <span class="btn btn-primary btn-sm mt-2">Ver productos</span>
+                    </div>
+                </a>
+            </div>
 
+            <div class="col-md-4">
+                <a href="productos.html?sub=salpicaderas" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4 text-center">
+                        <div class="icon-box mb-3">
+                            <i class="bi bi-shield-shaded fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark">SALPICADERAS</h5>
+                        <p class="text-muted small">Protección delantera y trasera para todos los modelos</p>
+                        <span class="btn btn-outline-primary btn-sm mt-2">Ver productos</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <style>
+        .category-card {
+            background: #ffffff;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
 
+        .category-card:hover {
+            transform: translateY(-10px);
+            border-color: #007bff;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        }
+
+        .icon-box i {
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover .icon-box i {
+            transform: scale(1.1);
+        }
+
+        .category-card h5 {
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+    </style>
 
 
 
