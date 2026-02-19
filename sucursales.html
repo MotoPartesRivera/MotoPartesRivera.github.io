@@ -4,37 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SUCURSALES| Moto Partes Rivera</title>
+    <title>SUCURSALES | Moto Partes Rivera</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Tu CSS -->
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        .borde-redes {
-            border: 3px solid #007bff;
-            border-radius: 12px;
-            overflow: hidden;
+        /* Mejoras de Estilo Profesional */
+        body {
+            background-color: #f8f9fa;
         }
 
-        .borde-redes .card-header {
-            background: linear-gradient(90deg, #007bff, #6610f2);
+        .menu-categorias {
+            background: #fff;
+            padding: 15px 0;
             text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-categorias a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .menu-categorias a:hover {
+            color: #007bff;
+        }
+
+        /* Sección Sucursal */
+        .sucursal-section {
+            padding: 60px 0;
+        }
+
+        .info-card {
+            border: none;
+            border-radius: 20px;
+            background: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: #007bff;
+            background: #e7f1ff;
+            padding: 12px;
+            border-radius: 12px;
+            margin-right: 15px;
+        }
+
+        .info-item h6 {
+            margin-bottom: 2px;
+            font-weight: 700;
+            color: #212529;
+        }
+
+        .info-item p {
+            color: #6c757d;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eee;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            border-radius: 10px;
+            font-weight: 600;
+            padding: 12px 25px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128c7e;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer tweaks */
+        footer {
+            background-color: #1a1d20 !important;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="index.html">
-                <img src="img/logo.png" alt="Logo" class="me-2">
-
+                <img src="img/logo.png" alt="Logo" class="me-2" style="height: 40px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
@@ -47,8 +124,7 @@
                     <li class="nav-item mx-2">
                         <a class="nav-link position-relative" href="#">
                             <i class="bi bi-cart"></i>
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
                         </a>
                     </li>
                 </ul>
@@ -56,155 +132,119 @@
         </div>
     </nav>
 
-      <!-- Menú de categorías -->
-<div class="menu-categorias">
-    <a href="index.html">INICIO</a>
-
-    <!-- Dropdown Refacciones 
-    <div class="dropdown">
-        <a href="#">REFACCIONES</a>
-        <div class="dropdown-content">
-            <a href="pedalesyposapies.html">Pedales y Posapies</a>
-            
-
-        </div>
+    <div class="menu-categorias">
+        <a href="index.html">Inicio</a>
+        <a href="refacciones.html">Refacciones</a>
+        <a href="sucursales.html" class="text-primary">Sucursales</a>
     </div>
-    -->
 
-    <a href="refacciones.html">Refacciones</a>
-
-    
-    <a href="sucursales.html">SUCURSALES</a>
-    
-</div>
-
-
-    <footer class="bg-dark text-light pt-5 pb-4 mt-5 border-top">
+    <section class="sucursal-section">
         <div class="container">
-            <div class="row g-4">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold text-dark">Visita nuestra Sucursal</h1>
+                <p class="text-muted">Estamos listos para atenderte y ofrecerte las mejores refacciones.</p>
+            </div>
 
-                <!-- Sección de sucursal -->
-                <section class="bg-white py-5">
-                    <div class="container text-center">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div class="card info-card shadow-sm p-4">
+                        <div class="card-body">
+                            <h4 class="fw-bold mb-4 text-primary">Información de Contacto</h4>
+                            
+                            <div class="info-item">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <div>
+                                    <h6>Dirección</h6>
+                                    <p>Avenida 16 de Septiembre 2716, Puebla, México, 72530</p>
+                                </div>
+                            </div>
 
-                        <!-- Tarjeta con sombra -->
-                        <div class="card shadow mx-auto mb-4" style="max-width: 500px;">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Sucursal Principal</h5>
-                                <p class="card-text">
-                                    📍 <strong>Dirección:</strong><br>
-                                    Avenida 16 de Septiembre 2716, Puebla, México, 72530<br><br>
-                                    📞 <strong>Teléfono:</strong><br>
-                                    221 189 7589<br><br>
-                                    📧 <strong>Email:</strong><br>
-                                    motopartesrivera@hotmail.com<br><br>
-                                    📱 <strong>WhatsApp:</strong><br>
-                                    +52 1 221 189 7589
-                                </p>
+                            <div class="info-item">
+                                <i class="bi bi-telephone-fill"></i>
+                                <div>
+                                    <h6>Llámanos</h6>
+                                    <p>221 189 7589</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="bi bi-envelope-at-fill"></i>
+                                <div>
+                                    <h6>Correo Electrónico</h6>
+                                    <p>motopartesrivera@hotmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <a href="https://wa.me/522211897589" class="btn btn-whatsapp w-100 shadow-sm" target="_blank">
+                                    <i class="bi bi-whatsapp me-2"></i> Contactar por WhatsApp
+                                </a>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Mapa incrustado -->
-                        <h5 class="mb-3">Ubicación en el mapa</h5>
+                <div class="col-lg-7">
+                    <div class="map-container">
                         <div class="ratio ratio-16x9">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.684645338753!2d-98.20742042395302!3d19.033612882162252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0c134c4ad07%3A0x350ee63f994087d4!2sC.%2016%20de%20Septiembre%202716%2C%20El%20Carmen%2C%2072530%20Heroica%20Puebla%20de%20Zaragoza%2C%20Pue.!5e0!3m2!1ses-419!2smx!4v1764668605741!5m2!1ses-419!2smx"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.841551065715!2d-98.2046467!3d19.0266498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbf8780287e07%3A0xe54d65606d5c5675!2sAv.%2016%20de%20Septiembre%202716%2C%20El%20Carmen%2C%2072530%20Puebla%2C%20Pue.!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx"
+                                style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
-
                     </div>
-                </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- Empresa -->
-                <div class="col-md-3">
-                    <h5 class="text-uppercase fw-bold">Moto Partes Rivera</h5>
-                    Avenida 16 de Septiembre 2716, Puebla, Mexico, 72530</p>
-                    <p>
-                    <p>Email: motopartesrivera@hotmail.com</p>
-                    <p>Tel: 221 189 7589</p>
-                    <div class="d-flex gap-2">
-                        <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank"
-                            class="text-light"><i class="bi bi-facebook fs-4"></i></a>
-                        <a href="https://www.instagram.com/motopartes_rivera/" target="_blank" class="text-light"><i
-                                class="bi bi-instagram fs-4"></i></a>
+    <footer class="bg-dark text-light pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Moto Partes Rivera</h5>
+                    <p class="small text-secondary">Tu aliado confiable en refacciones para motocicletas en Puebla. Calidad y servicio en un solo lugar.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank" class="text-light fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/motopartes_rivera/" target="_blank" class="text-light fs-4"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
 
-                <!-- Sobre nosotros -->
                 <div class="col-md-2">
-                    <h6 class="fw-bold">Sobre nosotros</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light text-decoration-none">Nuestra empresa</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Sucursales</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Trabaja con nosotros</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Ventas a mayoreo</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Contacto</a></li>
+                    <h6 class="fw-bold mb-3">Navegación</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none">Inicio</a></li>
+                        <li class="mb-2"><a href="refacciones.html" class="text-secondary text-decoration-none">Refacciones</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Llantas</a></li>
                     </ul>
                 </div>
 
-                <!-- Políticas -->
-                <div class="col-md-2">
-                    <h6 class="fw-bold">Políticas</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light text-decoration-none">Términos y condiciones</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Aviso de privacidad</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Métodos de pago</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Garantía</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Devoluciones</a></li>
-                    </ul>
-                </div>
-
-                <!-- Ayuda -->
-                <div class="col-md-2">
-                    <h6 class="fw-bold">Ayuda</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light text-decoration-none">Preguntas frecuentes</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Rastreo de pedido</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Reportar problema</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Facturación</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Ofertas</a></li>
-                    </ul>
-                </div>
-
-                <!-- Suscripción -->
                 <div class="col-md-3">
-                    <h6 class="fw-bold">Suscríbete</h6>
-                    <p>Recibe promociones, novedades y ofertas exclusivas directamente en tu correo.</p>
+                    <h6 class="fw-bold mb-3">Legal</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Términos y condiciones</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Aviso de privacidad</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
                     <form>
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Tu correo electrónico">
-                            <button class="btn btn-primary" type="submit">Suscribirme</button>
+                        <div class="input-group input-group-sm">
+                            <input type="email" class="form-control" placeholder="Tu correo">
+                            <button class="btn btn-primary" type="submit">Unirse</button>
                         </div>
                     </form>
                 </div>
-
             </div>
-
-            <hr class="border-light mt-4">
-            <p class="text-center mb-0">&copy; 2025 Moto Partes Rivera. Todos los derechos reservados.</p>
+            <hr class="border-secondary mt-4">
+            <p class="text-center small mb-0 text-secondary">© 2025 Moto Partes Rivera. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 
 </html>
 
