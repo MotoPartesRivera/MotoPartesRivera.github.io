@@ -1,0 +1,46 @@
+/* Estilos generales para catálogos de refacciones */
+.oculto {
+    display: none !important;
+}
+
+.catalogo .card {
+    transition: transform 0.3s ease, shadow 0.3s ease;
+    border: none;
+}
+
+.catalogo .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.catalogo .card-img-top {
+    height: 200px;
+    object-fit: contain;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.badge-descuento {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.menu-categorias {
+    background: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.menu-categorias a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.menu-categorias a:hover {
+    color: #0d6efd;
+}
