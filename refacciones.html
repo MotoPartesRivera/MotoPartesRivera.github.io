@@ -3,19 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inicio | Moto Partes Rivera</title>
+    <title>Moto Partes Rivera | Inicio</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Estilos adicionales para que los cuadros se vean profesionales */
+        .category-card {
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: #007bff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        .icon-box {
+            color: #007bff;
+        }
+        .category-card h6 {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="index.html">
                 <img src="img/logo.png" alt="Logo" class="me-2" style="height: 40px;">
-                Moto Partes Rivera
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
@@ -23,11 +50,11 @@
 
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav ms-auto d-flex align-items-center">
-                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-person fs-5"></i></a></li>
-                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-heart fs-5"></i></a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
                     <li class="nav-item mx-2">
                         <a class="nav-link position-relative" href="#">
-                            <i class="bi bi-cart fs-5"></i>
+                            <i class="bi bi-cart"></i>
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
                         </a>
                     </li>
@@ -36,79 +63,90 @@
         </div>
     </nav>
 
-    <div class="bg-dark py-2">
-        <div class="container d-flex justify-content-center flex-wrap gap-3">
-            <a href="index.html" class="text-white text-decoration-none small fw-bold">INICIO</a>
-            <a href="refacciones.html" class="text-white text-decoration-none small fw-bold">REFACCIONES</a>
-            <a href="#" class="text-white text-decoration-none small fw-bold">LLANTAS</a>
-            <a href="#" class="text-white text-decoration-none small fw-bold">ACEITES Y LUBRICANTES</a>
-            <a href="#" class="text-warning text-decoration-none small fw-bold"><i class="bi bi-lightning-fill"></i> OUTLET</a>
-            <a href="sucursales.html" class="text-white text-decoration-none small fw-bold">SUCURSALES</a>
-        </div>
+    <div class="menu-categorias text-center py-3 border-bottom bg-white">
+        <a href="index.html" class="mx-2 text-decoration-none text-dark fw-bold">INICIO</a>
+        <a href="refacciones.html" class="mx-2 text-decoration-none text-dark fw-bold">REFACCIONES</a>
+        <a href="#" class="mx-2 text-decoration-none text-dark fw-bold">LLANTAS</a>
+        <a href="#" class="mx-2 text-decoration-none text-dark fw-bold">ACEITES Y LUBRICANTES</a>
+        <a href="#" class="mx-2 text-decoration-none outlet fw-bold text-danger"><i class="bi bi-lightning-fill"></i> OUTLET</a>
+        <a href="sucursales.html" class="mx-2 text-decoration-none text-dark fw-bold">SUCURSALES</a>
     </div>
 
-    <section class="py-5 bg-light border-bottom">
-        <div class="container text-center">
-            <h1 class="display-6 fw-bold mb-4">Encuentra la refacción para tu moto</h1>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="input-group input-group-lg shadow-sm">
-                        <input type="text" class="form-control border-primary" placeholder="Ej: Zapatas FZ16, Aceite Italika, Cadena...">
-                        <button class="btn btn-primary px-4" type="button">
-                            <i class="bi bi-search"></i> Buscar
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <div class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">COMPRA POR SISTEMA</h2>
+            <hr class="mx-auto" style="width: 60px; height: 3px; background: #007bff;">
+        </div>
+
         <div class="row g-4 justify-content-center">
-            <div class="col-6 col-md-3">
-                <a href="refacciones.html" class="text-decoration-none">
-                    <div class="category-card shadow-sm text-center p-4">
-                        <div class="icon-box mb-3">
-                            <i class="bi bi-gear-wide-connected fs-1"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark">REFACCIONES</h5>
-                        <span class="btn-explore">Explorar <i class="bi bi-arrow-right"></i></span>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="cubiertas.html" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4">
+                        <div class="icon-box"><i class="bi bi-layers-half fs-1"></i></div>
+                        <h6 class="fw-bold text-dark text-uppercase">Cubiertas / Plásticos</h6>
                     </div>
                 </a>
             </div>
 
-            <div class="col-6 col-md-3">
-                <a href="#" class="text-decoration-none">
-                    <div class="category-card shadow-sm text-center p-4">
-                        <div class="icon-box mb-3">
-                            <i class="bi bi-disc fs-1"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark">LLANTAS</h5>
-                        <span class="btn-explore">Explorar <i class="bi bi-arrow-right"></i></span>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="miscelaneos.html" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4">
+                        <div class="icon-box"><i class="bi bi-box-seam fs-1"></i></div>
+                        <h6 class="fw-bold text-dark text-uppercase">Misceláneos</h6>
                     </div>
                 </a>
             </div>
 
-            <div class="col-6 col-md-3">
-                <a href="#" class="text-decoration-none">
-                    <div class="category-card shadow-sm text-center p-4">
-                        <div class="icon-box mb-3">
-                            <i class="bi bi-droplet-half fs-1"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark">ACEITES</h5>
-                        <span class="btn-explore">Explorar <i class="bi bi-arrow-right"></i></span>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="cuadro.html" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4">
+                        <div class="icon-box"><i class="bi bi-bicycle fs-1"></i></div>
+                        <h6 class="fw-bold text-dark text-uppercase">Cuadro</h6>
                     </div>
                 </a>
             </div>
 
-            <div class="col-6 col-md-3">
-                <a href="#" class="text-decoration-none">
-                    <div class="category-card shadow-sm text-center p-4 outlet-card">
-                        <div class="icon-box mb-3">
-                            <i class="bi bi-lightning-charge-fill fs-1 text-warning"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark">OUTLET</h5>
-                        <span class="btn-explore">Ver Ofertas <i class="bi bi-arrow-right"></i></span>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="electrico.html" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4">
+                        <div class="icon-box"><i class="bi bi-lightning-charge fs-1"></i></div>
+                        <h6 class="fw-bold text-dark text-uppercase">Sistema Eléctrico</h6>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="frenos.html" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4">
+                        <div class="icon-box"><i class="bi bi-record-circle fs-1"></i></div>
+                        <h6 class="fw-bold text-dark text-uppercase">Sistema de Freno</h6>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="suspension.html" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4">
+                        <div class="icon-box"><i class="bi bi-reception-1 fs-1" style="transform: rotate(90deg);"></i></div>
+                        <h6 class="fw-bold text-dark text-uppercase">Suspensión</h6>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="motor.html" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4">
+                        <div class="icon-box"><i class="bi bi-cpu fs-1"></i></div>
+                        <h6 class="fw-bold text-dark text-uppercase">Motor</h6>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="aceite.html" class="text-decoration-none">
+                    <div class="category-card shadow-sm p-4">
+                        <div class="icon-box"><i class="bi bi-droplet-fill fs-1"></i></div>
+                        <h6 class="fw-bold text-dark text-uppercase">Aceite</h6>
                     </div>
                 </a>
             </div>
@@ -116,70 +154,61 @@
     </div>
 
     <footer class="bg-dark text-light pt-5 pb-4">
-        <div class="container text-md-start">
+        <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-4">
-                    <h5 class="text-uppercase fw-bold text-primary mb-3">Moto Partes Rivera</h5>
-                    <p class="small mb-2"><i class="bi bi-geo-alt-fill me-2"></i>Avenida 16 de Septiembre 2716, Puebla, México, 72530</p>
-                    <p class="small mb-2"><i class="bi bi-envelope-fill me-2"></i>motopartesrivera@hotmail.com</p>
-                    <p class="small mb-3"><i class="bi bi-telephone-fill me-2"></i>221 189 7589</p>
-                    <div class="d-flex gap-3">
-                        <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
-                        <a href="https://www.instagram.com/motopartes_rivera/" target="_blank" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                    <h5 class="text-uppercase fw-bold">Moto Partes Rivera</h5>
+                    <p class="small">Avenida 16 de Septiembre 2716, Puebla, Mexico, 72530</p>
+                    <p class="small">Email: motopartesrivera@hotmail.com</p>
+                    <p class="small">Tel: 221 189 7589</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
                     </div>
                 </div>
 
                 <div class="col-md-2 mb-4">
-                    <h6 class="fw-bold mb-3 text-uppercase">Sobre nosotros</h6>
+                    <h6 class="fw-bold">Sobre nosotros</h6>
                     <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Nuestra empresa</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Sucursales</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Trabaja con nosotros</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Ventas a mayoreo</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Contacto</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Nuestra empresa</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Sucursales</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-2 mb-4">
-                    <h6 class="fw-bold mb-3 text-uppercase">Políticas</h6>
+                    <h6 class="fw-bold">Políticas</h6>
                     <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Términos y condiciones</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Aviso de privacidad</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Métodos de pago</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Garantía</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Devoluciones</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Términos</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Privacidad</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-2 mb-4">
-                    <h6 class="fw-bold mb-3 text-uppercase">Ayuda</h6>
+                    <h6 class="fw-bold">Ayuda</h6>
                     <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Preguntas frecuentes</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Rastreo</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Facturación</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none opacity-75">Ofertas</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Preguntas</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Facturación</a></li>
                     </ul>
                 </div>
 
-                <div class="col-md-3 mb-4">
-                    <h6 class="fw-bold mb-3 text-uppercase">Suscríbete</h6>
-                    <p class="small opacity-75">Recibe novedades directamente en tu correo.</p>
-                    <form class="mt-3">
+                <div class="col-md-3">
+                    <h6 class="fw-bold">Suscríbete</h6>
+                    <form>
                         <div class="input-group input-group-sm">
-                            <input type="email" class="form-control" placeholder="Tu email">
-                            <button class="btn btn-primary" type="button">Unirse</button>
+                            <input type="email" class="form-control" placeholder="Tu correo">
+                            <button class="btn btn-primary" type="submit">OK</button>
                         </div>
                     </form>
                 </div>
             </div>
-
-            <hr class="border-secondary mt-4">
-            <p class="text-center mb-0 small opacity-50">&copy; 2025 Moto Partes Rivera. Todos los derechos reservados.</p>
+            <hr class="border-light mt-4">
+            <p class="text-center small mb-0">&copy; 2025 Moto Partes Rivera. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
