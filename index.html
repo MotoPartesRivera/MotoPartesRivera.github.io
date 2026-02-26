@@ -11,9 +11,22 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Estilo necesario para que funcionen tus filtros de JS */
         .oculto {
             display: none !important;
+        }
+        /* Ajuste opcional para que el carrusel no sea excesivamente alto */
+        .carousel-item img {
+            max-height: 500px;
+            object-fit: cover;
+        }
+        /* Estenedor para el post/historia de Instagram */
+        .instagram-embed-container {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -25,24 +38,17 @@
             <a class="navbar-brand fw-bold" href="index.html">
                 <img src="img/logo.png" alt="Logo Moto Partes Rivera" class="me-2">
             </a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarContent">
                 <form class="d-flex mx-auto" style="max-width: 500px;">
                     <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">Buscar</button>
                 </form>
-
                 <ul class="navbar-nav ms-auto d-flex align-items-center">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="#"><i class="bi bi-person"></i></a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="#"><i class="bi bi-heart"></i></a>
-                    </li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
                     <li class="nav-item mx-2">
                         <a class="nav-link position-relative" href="#">
                             <i class="bi bi-cart"></i>
@@ -60,27 +66,55 @@
         <a href="sucursales.html">SUCURSALES</a>
     </div>
 
-    <div class="banner-promocional">
-        <img src="img/Banner1.png" alt="Promoción Moto Partes Rivera" class="img-fluid w-100">
+    <div id="carouselPrincipal" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselPrincipal" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselPrincipal" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselPrincipal" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carouselPrincipal" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="img/Banner1.png" class="d-block w-100" alt="Promoción 1">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/pxfuel.png" class="d-block w-100" alt="Promoción 2">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/Banner1.png" class="d-block w-100" alt="Promoción 3">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/pxfuel.png" class="d-block w-100" alt="Promoción 4">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrincipal" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPrincipal" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
     </div>
 
     <section class="bg-light">
-        <div class="mb-4">
-            <img src="img/pxfuel.png" alt="Banner Principal" class="img-fluid w-100">
-        </div>
-        <div class="container text-center py-4">
+        <div class="container text-center py-5">
             <h1 class="display-5 fw-bold">Bienvenido</h1>
             <p class="lead">Encuentra refacciones, llantas, aceites y más para tu motocicleta.</p>
             <a href="refacciones.html" class="btn btn-primary btn-lg">Explorar catálogo</a>
         </div>
     </section>
 
-
-
-
-
-
-    
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h3 class="text-center fw-bold mb-4"><i class="bi bi-instagram"></i> Síguenos en Instagram</h3>
+            <div class="instagram-embed-container">
+                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="TU_URL_AQUÍ" style="width: 100%; min-width: 326px;">
+                    </blockquote>
+                <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+        </div>
+    </section>
 
     <footer class="bg-dark text-light pt-5 pb-4 mt-5 border-top">
         <div class="container">
@@ -88,43 +122,13 @@
                 <div class="col-md-3">
                     <h5 class="text-uppercase fw-bold">Moto Partes Rivera</h5>
                     <p>Avenida 16 de Septiembre 2716, Puebla, Mexico, 72530</p>
-                    <p>Email: motopartesrivera@hotmail.com</p>
-                    <p>Tel: 221 189 7589</p>
                     <div class="d-flex gap-2">
                         <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
                         <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
                     </div>
                 </div>
-
-                <div class="col-md-2">
-                    <h6 class="fw-bold">Sobre nosotros</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-secondary text-decoration-none">Nuestra empresa</a></li>
-                        <li><a href="sucursales.html" class="text-secondary text-decoration-none">Sucursales</a></li>
-                        <li><a href="#" class="text-secondary text-decoration-none">Contacto</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-2">
-                    <h6 class="fw-bold">Políticas</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-secondary text-decoration-none">Aviso de privacidad</a></li>
-                        <li><a href="#" class="text-secondary text-decoration-none">Garantía</a></li>
-                        <li><a href="#" class="text-secondary text-decoration-none">Devoluciones</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-2">
-                    <h6 class="fw-bold">Ayuda</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-secondary text-decoration-none">Preguntas frecuentes</a></li>
-                        <li><a href="#" class="text-secondary text-decoration-none">Facturación</a></li>
-                    </ul>
-                </div>
-
                 <div class="col-md-3">
                     <h6 class="fw-bold">Suscríbete</h6>
-                    <p class="small">Recibe promociones y novedades en tu correo.</p>
                     <form>
                         <div class="input-group">
                             <input type="email" class="form-control" placeholder="Tu correo">
@@ -138,9 +142,6 @@
         </div>
     </footer>
 
-   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
