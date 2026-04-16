@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moto Partes Rivera | Aceites</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ── Navbar / menu ya heredados de style.css ── */
+
+        /* ── Hero de sección ── */
+        .section-hero {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 100%);
+            padding: 48px 0 36px;
+            text-align: center;
+            color: #fff;
+        }
+        .section-hero h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .section-hero p {
+            color: #a8c4e0;
+            font-size: 0.95rem;
+        }
+
+        /* ── Banner de marca ── */
+        .brand-banner {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-radius: 10px;
+            padding: 14px 22px;
+            margin: 40px 0 20px;
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .brand-banner i { font-size: 1.4rem; }
+
+        /* Colores por marca */
+        .banner-motul    { background: linear-gradient(90deg, #c0392b, #e74c3c); }
+        .banner-castrol  { background: linear-gradient(90deg, #155724, #28a745); }
+        .banner-ipone    { background: linear-gradient(90deg, #1a237e, #3949ab); }
+        .banner-yamalube { background: linear-gradient(90deg, #0d47a1, #1976d2); }
+        .banner-italika  { background: linear-gradient(90deg, #212121, #424242); }
+        .banner-repsol   { background: linear-gradient(90deg, #e65100, #ff6d00); }
+        .banner-gulf     { background: linear-gradient(90deg, #0288d1, #0097a7); }
+        .banner-elf      { background: linear-gradient(90deg, #6a1b9a, #8e24aa); }
+        .banner-liquimoly{ background: linear-gradient(90deg, #f9a825, #fbc02d); color: #1a1a1a !important; }
+        .banner-bardahl  { background: linear-gradient(90deg, #1b5e20, #388e3c); }
+        .banner-akron    { background: linear-gradient(90deg, #37474f, #546e7a); }
+        .banner-vento    { background: linear-gradient(90deg, #880e4f, #c2185b); }
+        .banner-otros    { background: linear-gradient(90deg, #37474f, #78909c); }
+
+        /* ── Tarjeta de producto ── */
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #0d6efd;
+            box-shadow: 0 12px 28px rgba(13,110,253,0.12);
+        }
+        .product-img-wrap {
+            background: #f5f7fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 160px;
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+        }
+        .product-img-wrap img {
+            max-height: 140px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        /* Placeholder cuando no hay imagen */
+        .product-img-wrap .img-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: #b0bec5;
+            font-size: 0.72rem;
+            text-align: center;
+        }
+        .product-img-wrap .img-placeholder i {
+            font-size: 2.4rem;
+        }
+        .product-body {
+            padding: 14px 14px 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            text-transform: uppercase;
+            line-height: 1.35;
+            flex: 1;
+        }
+        .product-stock {
+            font-size: 0.72rem;
+            color: #6c757d;
+            margin-top: 6px;
+        }
+        .product-stock .dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+        .dot-ok  { background: #28a745; }
+        .dot-out { background: #dc3545; }
+
+        /* ── Botón Comprar ── */
+        .btn-comprar {
+            background: #0d6efd;
+            color: #fff;
+            border: none;
+            border-radius: 0 0 12px 12px;
+            padding: 10px;
+            width: 100%;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+        .btn-comprar:hover { background: #0b5ed7; color: #fff; }
+
+        /* ── Modal de compra ── */
+        .modal-buy .modal-header {
+            background: #0d1b2a;
+            color: #fff;
+            border-bottom: none;
+            border-radius: 12px 12px 0 0;
+        }
+        .modal-buy .modal-header .btn-close { filter: invert(1); }
+        .modal-buy .modal-body  { padding: 28px 24px 12px; }
+        .modal-buy .modal-footer{ border-top: none; padding-top: 0; }
+
+        .buy-option {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            color: #1a1a2e;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+            cursor: pointer;
+            background: #fff;
+        }
+        .buy-option:hover {
+            border-color: #0d6efd;
+            box-shadow: 0 4px 16px rgba(13,110,253,0.12);
+            transform: translateY(-2px);
+            color: #0d6efd;
+        }
+        .buy-option .buy-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+        .buy-logo-paypal { background: #e8f0fe; color: #003087; }
+        .buy-logo-amazon { background: #fff8e1; color: #ff9900; }
+        .buy-logo-wa     { background: #e8f5e9; color: #25d366; }
+        .buy-option-text h6 { font-size: 0.9rem; font-weight: 700; margin: 0 0 2px; }
+        .buy-option-text p  { font-size: 0.75rem; color: #6c757d; margin: 0; }
+
+        /* ── WhatsApp float ── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px; right: 28px;
+            z-index: 9999;
+            background: #25D366;
+            color: #fff;
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 16px rgba(37,211,102,.45);
+            text-decoration: none;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.10);
+            box-shadow: 0 8px 24px rgba(37,211,102,.55);
+            color: #fff;
+        }
+
+        /* ── Filtro buscador ── */
+        #searchAceite {
+            max-width: 420px;
+            border-radius: 30px;
+            padding-left: 18px;
+            border: 1.5px solid #dee2e6;
+        }
+        #searchAceite:focus { border-color: #0d6efd; box-shadow: 0 0 0 3px rgba(13,110,253,.12); }
+        .product-hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="img/logo.png" alt="Logo Moto Partes Rivera" class="me-2" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link position-relative" href="#">
+                            <i class="bi bi-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menú -->
+    <div class="menu-categorias text-center py-3 border-bottom bg-white">
+        <a href="index.html" class="mx-2 text-decoration-none text-dark fw-bold">INICIO</a>
+        <a href="refacciones.html" class="mx-2 text-decoration-none text-dark fw-bold">REFACCIONES</a>
+        <a href="sucursales.html" class="mx-2 text-decoration-none text-dark fw-bold">SUCURSALES</a>
+    </div>
+
+    <!-- Hero -->
+    <div class="section-hero">
+        <div class="container">
+            <i class="bi bi-droplet-fill fs-1 mb-3 d-block" style="color:#60a5fa;"></i>
+            <h1>Aceites y Lubricantes</h1>
+            <p>Las mejores marcas para mantener tu moto en óptimas condiciones</p>
+            <!-- Buscador rápido -->
+            <div class="d-flex justify-content-center mt-3">
+                <input type="text" id="searchAceite" class="form-control" placeholder="🔍  Buscar aceite por nombre o marca...">
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         CONTENIDO DEL CATÁLOGO
+    ════════════════════════════════════════════ -->
+    <div class="container my-5">
+
+        <!-- ── MOTUL ── -->
+        <div class="brand-banner banner-motul">
+            <i class="bi bi-droplet-fill"></i> Motul
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <!-- Reemplaza src con la ruta real de tu imagen -->
+                        <img src="img/aceites/motul-3000-20w50.png" alt="Motul 3000 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-3000-20w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Motul 3000 20W50 4T</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Motul 3000 20W50 4T')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/motul-5000-20w50.png" alt="Motul 5000 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-5000-20w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Motul 5000 20W-50</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Motul 5000 20W-50')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/motul-5100-10w40.png" alt="Motul 5100 10W40"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-5100-10w40.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Motul 5100 10W-40</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Motul 5100 10W-40')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/motul-5100-15w50.png" alt="Motul 5100 15W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-5100-15w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Motul 5100 15W-50</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Motul 5100 15W-50')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/motul-7100-10w40.png" alt="Motul 7100 10W40"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-7100-10w40.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Motul Sintético 7100 4T 10W40</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Motul Sintético 7100 4T 10W40')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/motul-7100-20w50.png" alt="Motul 7100 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-7100-20w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Motul Sintético 7100 4T 20W50</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Motul Sintético 7100 4T 20W50')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/motul-7100-10w60.png" alt="Motul 7100 10W60"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-7100-10w60.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Motul 7100 4T 10W60 1L Sintético</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Motul 7100 4T 10W60 1L Sintético')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/motul-710-2t.png" alt="Motul 710 2T"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-710-2t.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Motul Sintético 710 2T Pre-Mix</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Motul Sintético 710 2T Pre-Mix')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/motul-fork-10w.png" alt="Motul Fork Oil 10W"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-fork-10w.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Motul Horquillas Fork Oil Expert 10W Medium</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Motul Horquillas Fork Oil Expert 10W')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/motul-hd-80w90.png" alt="Motul HD 80W90"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>motul-hd-80w90.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Diferencial Motul HD SAE 80W90</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Diferencial Motul HD SAE 80W90')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Motul -->
+
+
+        <!-- ── CASTROL ── -->
+        <div class="brand-banner banner-castrol">
+            <i class="bi bi-droplet-fill"></i> Castrol
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/castrol-20w50-4t.png" alt="Castrol 20W50 4T"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>castrol-20w50-4t.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Castrol 20W-50 4T</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Castrol 20W-50 4T')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/castrol-sintetico-20w50.png" alt="Castrol Sintético 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>castrol-sintetico-20w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Castrol Sintético 20W-50 4T</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Castrol Sintético 20W-50 4T')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/castrol-2t.png" alt="Castrol 2T"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>castrol-2t.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Castrol 2 Tiempos API TC</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Castrol 2 Tiempos API TC')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Castrol -->
+
+
+        <!-- ── IPONE ── -->
+        <div class="brand-banner banner-ipone">
+            <i class="bi bi-droplet-fill"></i> IPONE
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/ipone-10w40-sintetico.png" alt="IPONE 10W40"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>ipone-10w40-sintetico.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite 10W40 Sintético MA2 IPONE</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite 10W40 Sintético MA2 IPONE')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/ipone-15w50-sintetico.png" alt="IPONE 15W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>ipone-15w50-sintetico.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite 15W50 Sintético 4T MA2 IPONE</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite 15W50 Sintético 4T MA2 IPONE')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/ipone-katana-10w40.png" alt="IPONE Katana 10W40"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>ipone-katana-10w40.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Katana 10W40 100% Sintético 4T MA2 IPONE</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Katana 10W40 100% Sintético 4T MA2 IPONE')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/ipone-katana-fp-10w40.png" alt="IPONE Katana Full Power 10W40"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>ipone-katana-fp-10w40.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Katana Full Power 10W40 100% Sintético IPONE</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Katana Full Power 10W40 100% Sintético IPONE')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/ipone-katana-fp-10w50.png" alt="IPONE Katana Full Power 10W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>ipone-katana-fp-10w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Katana Full Power 10W50 100% Sintético IPONE</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Katana Full Power 10W50 100% Sintético IPONE')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/ipone-katana-fp-5w40.png" alt="IPONE Katana Full Power 5W40"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>ipone-katana-fp-5w40.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Katana Full Power 5W40 100% Sintético IPONE</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Katana Full Power 5W40 100% Sintético IPONE')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/ipone-katana-offroad-10w50.png" alt="IPONE Katana Off Road 10W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>ipone-katana-offroad-10w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Katana Off Road 10W50 100% Sintético IPONE</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Katana Off Road 10W50 100% Sintético IPONE')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/ipone-katana-offroad-10w60.png" alt="IPONE Katana Off Road 10W60"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>ipone-katana-offroad-10w60.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Katana Off Road 10W60 100% Sintético IPONE</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Katana Off Road 10W60 100% Sintético IPONE')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/ipone-fork-10w.png" alt="IPONE Fork Oil 10W"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>ipone-fork-10w.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Horquillas Fork Grade 10 Sintético Plus IPONE</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Horquillas Fork Grade 10 Sintético Plus IPONE')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row IPONE -->
+
+
+        <!-- ── YAMALUBE ── -->
+        <div class="brand-banner banner-yamalube">
+            <i class="bi bi-droplet-fill"></i> Yamalube
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/yamalube-2t-semisint.png" alt="Yamalube 2T"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>yamalube-2t-semisint.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Yamalube 2T Multigrado Semi Sintético</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Yamalube 2T Multigrado Semi Sintético')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/yamalube-4t-20w50.png" alt="Yamalube 4T 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>yamalube-4t-20w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Yamalube 4T Multigrado 20W-50</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Yamalube 4T Multigrado 20W-50')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/yamalube-transmision-150ml.png" alt="Yamalube Transmisión"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>yamalube-transmision-150ml.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Transmisión Yamalube 150ml</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Transmisión Yamalube 150ml')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Yamalube -->
+
+
+        <!-- ── ITALIKA ── -->
+        <div class="brand-banner banner-italika">
+            <i class="bi bi-droplet-fill"></i> Italika
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/italika-4t-20w50.png" alt="Italika 4T 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>italika-4t-20w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Italika 4 Tiempos 20W50 Multi</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Italika 4 Tiempos 20W50 Multi')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Italika -->
+
+
+        <!-- ── REPSOL ── -->
+        <div class="brand-banner banner-repsol">
+            <i class="bi bi-droplet-fill"></i> Repsol
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/repsol-20w50-4t.png" alt="Repsol 20W50 4T"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>repsol-20w50-4t.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Repsol Rider Town Plus 4T 20W-50</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Repsol Rider Town Plus 4T 20W-50')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/repsol-fork-10w.png" alt="Repsol Fork 10W"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>repsol-fork-10w.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Horquillas Repsol 10W</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Horquillas Repsol 10W')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Repsol -->
+
+
+        <!-- ── GULF ── -->
+        <div class="brand-banner banner-gulf">
+            <i class="bi bi-droplet-fill"></i> Gulf
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/gulf-power-trac-10w30.png" alt="Gulf Power Trac 10W30"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>gulf-power-trac-10w30.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Gulf Power Trac 4T 10W30 946ml</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Gulf Power Trac 4T 10W30 946ml')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Gulf -->
+
+
+        <!-- ── ELF ── -->
+        <div class="brand-banner banner-elf">
+            <i class="bi bi-droplet-fill"></i> Elf
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/elf-cruise-20w50.png" alt="Elf Cruise 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>elf-cruise-20w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Elf 4T Cruise Mineral 20W50 946ml</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Elf 4T Cruise Mineral 20W50 946ml')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/elf-moto4-10w50.png" alt="Elf Moto4 Tech 10W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>elf-moto4-10w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Elf 4T Synthetic 10W50 Moto4 Tech 1L</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Elf 4T Synthetic 10W50 Moto4 Tech 1L')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Elf -->
+
+
+        <!-- ── LIQUI MOLY ── -->
+        <div class="brand-banner banner-liquimoly">
+            <i class="bi bi-droplet-fill"></i> Liqui Moly
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/liquimoly-4t-20w50.png" alt="Liqui Moly 4T 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>liquimoly-4t-20w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Liqui Moly 4T Mineral 20W-50</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Liqui Moly 4T Mineral 20W-50')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Liqui Moly -->
+
+
+        <!-- ── BARDAHL ── -->
+        <div class="brand-banner banner-bardahl">
+            <i class="bi bi-droplet-fill"></i> Bardahl
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/bardahl-2t.png" alt="Bardahl 2T"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>bardahl-2t.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Bardahl 2 Tiempos Motores Pequeños</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Bardahl 2 Tiempos Motores Pequeños')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Bardahl -->
+
+
+        <!-- ── VENTO ── -->
+        <div class="brand-banner banner-vento">
+            <i class="bi bi-droplet-fill"></i> Vento
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/vento-4t-semisint-10w40.png" alt="Vento Semi Sintético 10W40"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>vento-4t-semisint-10w40.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Vento 4T Semi Sintético Scooter JASO MB 10W-40</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Vento 4T Semi Sintético Scooter JASO MB 10W-40')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/vento-4t-sint-15w50.png" alt="Vento Sintético 15W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>vento-4t-sint-15w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Vento 4T Sintético JASO MA2 15W-50</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Vento 4T Sintético JASO MA2 15W-50')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/vento-4t-mineral-20w50.png" alt="Vento Mineral 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>vento-4t-mineral-20w50.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Vento 4T SL Mineral JASO MB MA2 20W-50</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Vento 4T SL Mineral JASO MB MA2 20W-50')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Vento -->
+
+
+        <!-- ── OTROS / AKRON / ZEHN ── -->
+        <div class="brand-banner banner-otros">
+            <i class="bi bi-droplet-fill"></i> Otros
+        </div>
+        <div class="row g-3">
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/akron-20w50-4t.png" alt="Akron 20W50"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>akron-20w50-4t.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite 4 Tiempos SL SAE 20W50 Akron</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite 4 Tiempos SL SAE 20W50 Akron')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/zehn-fork-10w.png" alt="Zehn Fork Oil 10W"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>zehn-fork-10w.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Horquillas Zehn Moto Fork Oil 10W 250ml</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Horquillas Zehn Moto Fork Oil 10W 250ml')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 product-item">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="img/aceites/aflojatodo-dielectrico.png" alt="Aflojatodo Dieléctrico"
+                             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'bi bi-image\'></i><span>img/aceites/<br>aflojatodo-dielectrico.png</span></div>'">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-name">Aceite Aflojatodo Multiusos Dieléctrico 110ml</p>
+                        <p class="product-stock"><span class="dot dot-ok"></span> En existencia</p>
+                    </div>
+                    <button class="btn-comprar" onclick="abrirModal('Aceite Aflojatodo Multiusos Dieléctrico 110ml')">
+                        <i class="bi bi-cart-check me-1"></i> Comprar
+                    </button>
+                </div>
+            </div>
+
+        </div><!-- /row Otros -->
+
+    </div><!-- /container -->
+
+
+    <!-- ══════════════════════════════════
+         MODAL DE COMPRA
+    ═══════════════════════════════════ -->
+    <div class="modal fade modal-buy" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 12px; overflow: hidden; border: none;">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title mb-1" id="modalCompraLabel">¿Dónde deseas comprar?</h5>
+                        <p class="mb-0 small" id="modalProductoNombre" style="color:#a8c4e0; font-size: 0.78rem;"></p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-3" style="font-size: 0.85rem;">Selecciona la plataforma de tu preferencia para completar tu compra:</p>
+
+                    <a href="#" id="btnPaypal" class="buy-option" target="_blank" rel="noopener">
+                        <div class="buy-logo buy-logo-paypal">
+                            <i class="bi bi-paypal"></i>
+                        </div>
+                        <div class="buy-option-text">
+                            <h6>Pagar con PayPal</h6>
+                            <p>Pago seguro con tarjeta o cuenta PayPal</p>
+                        </div>
+                        <i class="bi bi-chevron-right ms-auto text-muted"></i>
+                    </a>
+
+                    <a href="#" id="btnAmazon" class="buy-option" target="_blank" rel="noopener">
+                        <div class="buy-logo buy-logo-amazon">
+                            <i class="bi bi-bag-fill"></i>
+                        </div>
+                        <div class="buy-option-text">
+                            <h6>Comprar en Amazon</h6>
+                            <p>Envío rápido, devoluciones sencillas</p>
+                        </div>
+                        <i class="bi bi-chevron-right ms-auto text-muted"></i>
+                    </a>
+
+                    <a href="https://wa.me/522211897589" class="buy-option" target="_blank" rel="noopener">
+                        <div class="buy-logo buy-logo-wa">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <div class="buy-option-text">
+                            <h6>Preguntar por WhatsApp</h6>
+                            <p>Asesoría directa y pedidos personalizados</p>
+                        </div>
+                        <i class="bi bi-chevron-right ms-auto text-muted"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold">Moto Partes Rivera</h5>
+                    <p class="small">Avenida 16 de Septiembre 2716, Puebla, Mexico, 72530</p>
+                    <p class="small">Email: motopartesrivera@hotmail.com</p>
+                    <p class="small">Tel: 221 189 7589</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold">Sobre nosotros</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-light text-decoration-none">Nuestra empresa</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Sucursales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold">Políticas</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-light text-decoration-none">Términos</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold">Ayuda</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-light text-decoration-none">Preguntas</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Facturación</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold">Suscríbete</h6>
+                    <div class="input-group input-group-sm">
+                        <input type="email" class="form-control" placeholder="Tu correo">
+                        <button class="btn btn-primary" type="button">OK</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light mt-4">
+            <p class="text-center small mb-0">&copy; 2025 Moto Partes Rivera. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/522211897589?text=Hola,%20me%20interesa%20información%20sobre%20aceites"
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ── Abrir modal con nombre del producto ──
+        function abrirModal(nombreProducto) {
+            document.getElementById('modalProductoNombre').textContent = nombreProducto;
+
+            // Aquí pones los links reales de PayPal y Amazon cuando los tengas
+            // Por ahora apuntan a # — solo reemplaza el href con la URL real del producto
+            document.getElementById('btnPaypal').href = '#';  // ej: https://www.paypal.com/...
+            document.getElementById('btnAmazon').href = '#';  // ej: https://www.amazon.com.mx/...
+
+            var modal = new bootstrap.Modal(document.getElementById('modalCompra'));
+            modal.show();
+        }
+
+        // ── Buscador en tiempo real ──
+        document.getElementById('searchAceite').addEventListener('input', function () {
+            const query = this.value.toLowerCase().trim();
+            document.querySelectorAll('.product-item').forEach(function (item) {
+                const name = item.querySelector('.product-name').textContent.toLowerCase();
+                item.classList.toggle('product-hidden', query.length > 0 && !name.includes(query));
+            });
+        });
+    </script>
+</body>
+</html>
