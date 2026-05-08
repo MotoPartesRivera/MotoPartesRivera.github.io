@@ -150,19 +150,7 @@
             opacity: 0.55;
             z-index: 0;
         }
-        .hero-placeholder {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at center, #1a1a1a 0%, var(--bg) 70%);
-            z-index: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .hero-placeholder i { font-size: 5rem; color: rgba(255,255,255,0.06); }
-        .hero-placeholder span { color: rgba(255,255,255,0.1); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+        /* ❌ hero-placeholder ELIMINADO COMPLETAMENTE */
         .hero-content {
             position: relative;
             z-index: 2;
@@ -246,7 +234,7 @@
             .hero-content h1 { font-size: clamp(2.2rem, 10vw, 3.5rem); }
         }
 
-        /* ========== CAROUSEL DE MARCAS ========== */
+        /* ========== CAROUSEL DE MARCAS (CON COLOR REAL SIEMPRE) ========== */
         .marcas-carousel {
             background: var(--bg-elevated);
             border-top: 1px solid var(--border);
@@ -267,14 +255,16 @@
             width: auto;
             max-width: 130px;
             object-fit: contain;
-            filter: brightness(0) invert(0.7);
-            opacity: 0.55;
+            /* 🟢 ELIMINADO EL FILTRO GRIS - AHORA COLOR REAL SIEMPRE */
+            filter: none;
+            opacity: 0.9;
             transition: all 0.3s ease;
             flex-shrink: 0;
         }
         .marca-logo:hover {
-            filter: brightness(1) invert(0);
+            /* 🟢 EN HOVER SOLO AUMENTA UN POCO LA OPACIDAD, SIN CAMBIAR COLOR */
             opacity: 1;
+            transform: scale(1.03);
         }
         @keyframes scrollMarcas {
             0% { transform: translateX(0); }
@@ -486,12 +476,10 @@
         </div>
     </nav>
 
-    <!-- ==================== HERO ==================== -->
+    <!-- ==================== HERO (CON BG DESCOMENTADO Y SIN PLACEHOLDER) ==================== -->
     <section class="hero" id="hero">
-        <div class="hero-placeholder">
-            <i class="bi bi-bicycle"></i>
-            <span>img/hero-moto.jpg</span>
-        </div>
+        <div class="hero-bg"></div>  <!-- ✅ DESCOMENTADO -->
+        <!-- ❌ hero-placeholder ELIMINADO -->
         <div class="hero-content">
             <span class="hero-badge">Desde 2010</span>
             <h1>Potencia tu <span class="outline">moto</span></h1>
@@ -503,7 +491,7 @@
         </div>
     </section>
 
-    <!-- ==================== CAROUSEL DE MARCAS (LOGOS REALES) ==================== -->
+    <!-- ==================== CAROUSEL DE MARCAS (COLOR REAL SIEMPRE) ==================== -->
     <div class="marcas-carousel">
         <div class="marcas-track">
             <!-- ═══════════ FILA 1 ═══════════ -->
