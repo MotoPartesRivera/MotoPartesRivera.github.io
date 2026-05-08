@@ -1,101 +1,269 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Moto Partes Rivera | Refacciones y Accesorios para Moto</title>
+    <title>Moto Partes Rivera | Refacciones y Accesorios para Moto en Puebla</title>
 
-    <!-- SEO Meta Tags -->
+    <!-- SEO -->
     <meta name="description" content="Moto Partes Rivera – Refacciones, llantas, aceites y accesorios para tu motocicleta en Puebla. Calidad garantizada y los mejores precios.">
     <meta name="keywords" content="moto partes, refacciones moto, llantas moto, aceite moto, Puebla, motopartes rivera">
     <meta name="author" content="Moto Partes Rivera">
 
-    <!-- Open Graph / Redes Sociales -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://motopartesrivera.com/">
     <meta property="og:title" content="Moto Partes Rivera | Refacciones y Accesorios para Moto">
-    <meta property="og:description" content="Refacciones, llantas, aceites y accesorios para tu motocicleta en Puebla. Calidad garantizada y los mejores precios.">
+    <meta property="og:description" content="Refacciones, llantas, aceites y accesorios para tu motocicleta en Puebla.">
     <meta property="og:image" content="img/logo.png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Moto Partes Rivera">
-    <meta name="twitter:description" content="Refacciones, llantas, aceites y accesorios para tu motocicleta en Puebla.">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* --- Carrusel Principal: Imagen entera sin recortes --- */
+        :root {
+            --azul-rey: #0056a6;
+            --azul-oscuro: #003d7a;
+            --naranja: #f15a24;
+            --naranja-hover: #d94a1a;
+            --carbon: #1a1d20;
+            --gris-claro: #f5f6f8;
+            --blanco: #ffffff;
+            --rojo-oferta: #dc3545;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gris-claro);
+            color: #212529;
+            overflow-x: hidden;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: var(--carbon);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.78rem;
+            padding: 6px 0;
+        }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+        .top-bar a { color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 12px; transition: color 0.2s; }
+        .top-bar a:hover { color: var(--naranja); }
+        .top-bar i { margin-right: 4px; }
+
+        /* ========== NAVBAR PRINCIPAL ========== */
+        .navbar-main {
+            background: var(--blanco);
+            padding: 10px 0;
+            border-bottom: 2px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .navbar-main .navbar-brand img { height: 48px; }
+        .navbar-main .nav-link {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #333 !important;
+            padding: 8px 14px !important;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .navbar-main .nav-link:hover { background: #e7f1ff; color: var(--azul-rey) !important; }
+        .navbar-main .nav-link.nav-cta {
+            background: var(--naranja);
+            color: #fff !important;
+            border-radius: 20px;
+            padding: 8px 18px !important;
+        }
+        .navbar-main .nav-link.nav-cta:hover { background: var(--naranja-hover); color: #fff !important; }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+        .dropdown-menu .dropdown-item {
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 10px 20px;
+            transition: all 0.15s;
+        }
+        .dropdown-menu .dropdown-item:hover { background: #e7f1ff; color: var(--azul-rey); }
+        .dropdown-menu .dropdown-item i { margin-right: 6px; color: var(--azul-rey); }
+
+        /* ========== MENÚ DE CATEGORÍAS ========== */
+        .menu-categorias {
+            background: var(--azul-rey);
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .menu-categorias a {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background 0.2s;
+            display: inline-block;
+        }
+        .menu-categorias a:hover { background: rgba(255,255,255,0.15); }
+        .menu-categorias a.outlet { color: #ffcc00; }
+
+        /* ========== CARRUSEL ========== */
         #carouselPrincipal .carousel-item img {
-            max-height: 450px;
+            max-height: 420px;
             object-fit: contain;
-            background-color: #f8f9fa;
+            background: #f0f2f5;
+            padding: 10px;
+        }
+        .carousel-indicators [data-bs-target] {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--azul-rey);
+            border: none;
+        }
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: var(--azul-rey);
+            border-radius: 50%;
+            padding: 20px;
         }
 
-        /* --- Carrusel de Promos --- */
-        .img-promo-cuadrada {
-            aspect-ratio: 1 / 1;
-            object-fit: contain;
-            background-color: #000;
-        }
-
-        .carousel-dark-btns .carousel-control-prev-icon,
-        .carousel-dark-btns .carousel-control-next-icon {
-            filter: invert(1) grayscale(100) brightness(200%);
-        }
-
-        /* --- Sección "¿Por qué elegirnos?" --- */
-        .porque-card {
-            background: #fff;
-            border-radius: 12px;
-            border: 1px solid #e8e8e8;
-            padding: 28px 20px;
+        /* ========== SECCIÓN BIENVENIDA ========== */
+        .bienvenida {
+            background: var(--blanco);
+            padding: 60px 0 40px;
             text-align: center;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-top: 3px solid var(--naranja);
+        }
+        .bienvenida h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--carbon);
+            letter-spacing: -0.5px;
+        }
+        .bienvenida h1 span { color: var(--naranja); }
+        .bienvenida .lead { color: #6c757d; max-width: 600px; margin: 10px auto 24px; }
+
+        /* ========== WIDGETS RÁPIDOS ========== */
+        .quick-widgets .widget-card {
+            background: var(--blanco);
+            border-radius: 14px;
+            padding: 24px 18px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .quick-widgets .widget-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--azul-rey);
+            box-shadow: 0 14px 32px rgba(0,86,166,0.10);
+        }
+        .widget-icon {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            background: #e7f1ff;
+            color: var(--azul-rey);
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+        }
+        .widget-card h6 { font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .widget-card small { color: #6c757d; font-size: 0.78rem; }
+
+        /* ========== ¿POR QUÉ ELEGIRNOS? ========== */
+        .porque-card {
+            background: var(--blanco);
+            border-radius: 14px;
+            border: 1px solid #e9ecef;
+            padding: 30px 22px;
+            text-align: center;
+            transition: all 0.3s ease;
             height: 100%;
         }
         .porque-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(0, 123, 255, 0.10);
+            border-color: var(--naranja);
+            box-shadow: 0 12px 30px rgba(241,90,36,0.08);
         }
         .porque-icon {
-            width: 60px;
-            height: 60px;
+            width: 64px; height: 64px;
             border-radius: 50%;
-            background: #e7f1ff;
-            color: #0d6efd;
+            background: #fff5f0;
+            color: var(--naranja);
+            font-size: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 26px;
-            margin: 0 auto 14px;
+            margin: 0 auto 16px;
         }
-        .porque-card h6 {
-            font-size: 0.95rem;
+        .porque-card h6 { font-weight: 700; font-size: 0.95rem; letter-spacing: 0.3px; margin-bottom: 6px; color: var(--carbon); }
+        .porque-card p { font-size: 0.83rem; color: #6c757d; margin: 0; }
+
+        /* ========== OFERTAS ========== */
+        .oferta-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--rojo-oferta);
+            color: #fff;
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-        .porque-card p {
-            font-size: 0.83rem;
-            color: #6c757d;
-            margin: 0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            z-index: 2;
         }
 
-        /* --- Instagram Embed --- */
-        .instagram-embed-container {
-            display: flex;
+        /* ========== FOOTER ========== */
+        .footer-main {
+            background: var(--carbon);
+            color: rgba(255,255,255,0.7);
+            padding: 56px 0 0;
+        }
+        .footer-main h5, .footer-main h6 { color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+        .footer-main a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+        .footer-main a:hover { color: var(--naranja); }
+        .footer-main .social-icon {
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            font-size: 18px;
+            margin-right: 8px;
+            transition: all 0.25s;
+        }
+        .footer-main .social-icon:hover { background: var(--naranja); color: #fff; transform: translateY(-2px); }
+        .footer-bottom {
+            background: #111315;
+            color: rgba(255,255,255,0.35);
+            padding: 20px 0;
+            font-size: 0.78rem;
+            margin-top: 40px;
         }
 
-        /* --- Botón flotante WhatsApp --- */
+        /* ========== BOTÓN FLOTANTE WHATSAPP ========== */
         .whatsapp-float {
             position: fixed;
             bottom: 28px;
@@ -103,79 +271,119 @@
             z-index: 9999;
             background: #25D366;
             color: #fff;
-            width: 58px;
-            height: 58px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+            font-size: 28px;
+            box-shadow: 0 6px 24px rgba(37,211,102,0.40);
             text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.25s ease;
+            animation: pulse 2s infinite;
         }
         .whatsapp-float:hover {
             transform: scale(1.10);
-            box-shadow: 0 8px 24px rgba(37,211,102,0.55);
+            box-shadow: 0 10px 30px rgba(37,211,102,0.55);
             color: #fff;
         }
-        .whatsapp-float .tooltip-wa {
-            position: absolute;
-            right: 68px;
-            background: #1a1a1a;
-            color: #fff;
-            font-size: 12px;
-            padding: 5px 10px;
-            border-radius: 6px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s;
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+            70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
-        .whatsapp-float:hover .tooltip-wa {
-            opacity: 1;
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .bienvenida h1 { font-size: 1.6rem; }
+            .menu-categorias a { font-size: 0.7rem; padding: 10px 12px; }
+            #carouselPrincipal .carousel-item img { max-height: 250px; }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="img/logo.png" alt="Logo Moto Partes Rivera" class="me-2">
+    <!-- ==================== TOP BAR ==================== -->
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="bi bi-geo-alt-fill"></i> Av. 16 de Septiembre 2716, Puebla</span>
+            <span>
+                <a href="tel:2211897589"><i class="bi bi-telephone-fill"></i> 221 189 7589</a>
+                <a href="mailto:motopartesrivera@hotmail.com"><i class="bi bi-envelope-fill"></i> Email</a>
+                <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/motopartes_rivera/" target="_blank"><i class="bi bi-instagram"></i></a>
+            </span>
+        </div>
+    </div>
+
+    <!-- ==================== NAVBAR PRINCIPAL ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-main">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="img/logo.png" alt="Moto Partes Rivera" class="me-2">
+                <div>
+                    <span style="font-size:1.1rem;color:var(--carbon);font-weight:800;">MOTO PARTES</span><br>
+                    <span style="font-size:0.65rem;color:var(--naranja);letter-spacing:2px;text-transform:uppercase;">Rivera</span>
+                </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <form class="d-flex mx-auto" style="max-width: 500px;">
-                    <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Buscar</button>
-                </form>
-                <ul class="navbar-nav ms-auto d-flex align-items-center">
-                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
-                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link position-relative" href="#">
-                            <i class="bi bi-cart"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-                        </a>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+
+                    <!-- Dropdown Refacciones -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Refacciones</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="motor.html"><i class="bi bi-cpu"></i> Motor</a></li>
+                            <li><a class="dropdown-item" href="frenos.html"><i class="bi bi-record-circle"></i> Frenos</a></li>
+                            <li><a class="dropdown-item" href="suspension.html"><i class="bi bi-reception-1"></i> Suspensión</a></li>
+                            <li><a class="dropdown-item" href="electrico.html"><i class="bi bi-lightning-charge"></i> Eléctrico</a></li>
+                            <li><a class="dropdown-item" href="cuadro.html"><i class="bi bi-bicycle"></i> Cuadro</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="refacciones.html"><i class="bi bi-grid-fill"></i> Ver todas</a></li>
+                        </ul>
                     </li>
+
+                    <!-- Dropdown Aceites -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Aceites</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="aceite.html#motul">Motul</a></li>
+                            <li><a class="dropdown-item" href="aceite.html#castrol">Castrol</a></li>
+                            <li><a class="dropdown-item" href="aceite.html#ipone">IPONE</a></li>
+                            <li><a class="dropdown-item" href="aceite.html#yamalube">Yamalube</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="aceite.html"><i class="bi bi-droplet-fill"></i> Ver todos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="cubiertas.html">Cubiertas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="miscelaneos.html">Misceláneos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sucursales.html">Sucursales</a></li>
+                    <li class="nav-item"><a class="nav-link nav-cta" href="https://wa.me/522211897589"><i class="bi bi-whatsapp me-1"></i> Contactar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Menú de Categorías -->
+    <!-- ==================== MENÚ CATEGORÍAS RÁPIDO ==================== -->
     <div class="menu-categorias">
-        <a href="index.html">INICIO</a>
-        <a href="refacciones.html">REFACCIONES</a>
-        <a href="sucursales.html">SUCURSALES</a>
+        <a href="refacciones.html">Refacciones</a>
+        <a href="aceite.html">Aceites</a>
+        <a href="cubiertas.html">Cubiertas</a>
+        <a href="frenos.html">Frenos</a>
+        <a href="motor.html">Motor</a>
+        <a href="suspension.html">Suspensión</a>
+        <a href="electrico.html">Eléctrico</a>
+        <a href="sucursales.html">Sucursales</a>
     </div>
 
-    <!-- Carrusel Principal -->
+    <!-- ==================== CARRUSEL PRINCIPAL ==================== -->
     <div id="carouselPrincipal" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselPrincipal" data-bs-slide-to="0" class="active"></button>
@@ -183,14 +391,14 @@
             <button type="button" data-bs-target="#carouselPrincipal" data-bs-slide-to="2"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="3000">
-                <img src="img/Carru2.png" class="d-block w-100" alt="Promoción 1">
+            <div class="carousel-item active" data-bs-interval="3500">
+                <img src="img/Carru2.png" class="d-block w-100" alt="Promoción Motul">
             </div>
-            <div class="carousel-item" data-bs-interval="3000">
-                <img src="img/Carru3.png" class="d-block w-100" alt="Promoción 2">
+            <div class="carousel-item" data-bs-interval="3500">
+                <img src="img/Carru3.png" class="d-block w-100" alt="Promoción Castrol">
             </div>
-            <div class="carousel-item" data-bs-interval="3000">
-                <img src="img/Carru4.png" class="d-block w-100" alt="Promoción 3">
+            <div class="carousel-item" data-bs-interval="3500">
+                <img src="img/Carru4.png" class="d-block w-100" alt="Promoción IPONE">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrincipal" data-bs-slide="prev">
@@ -201,82 +409,84 @@
         </button>
     </div>
 
-    <!-- Ofertas Destacadas 
-    <section class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-4 text-primary">OFERTAS DESTACADAS</h2>
-            <div class="row justify-content-center">
-                <div class="col-11 col-md-6 col-lg-5">
-                    <div id="carouselPromoCuadrado" class="carousel slide shadow-lg rounded-4 overflow-hidden carousel-dark-btns" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="img/Carru1.jpeg" class="d-block w-100 img-promo-cuadrada" alt="Aceite Sintético">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/Carru2.jpeg" class="d-block w-100 img-promo-cuadrada" alt="Rin Rojo">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/Carru3.jpeg" class="d-block w-100 img-promo-cuadrada" alt="Rin Negro">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/Carru4.jpeg" class="d-block w-100 img-promo-cuadrada" alt="Aceite Mineral">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPromoCuadrado" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselPromoCuadrado" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
-    <!-- Bienvenida -->
-    <section class="bg-light border-top">
-        <div class="container text-center py-5">
-            <h1 class="display-5 fw-bold">Bienvenido</h1>
-            <p class="lead">Encuentra refacciones, llantas, aceites y más para tu motocicleta.</p>
-            <a href="refacciones.html" class="btn btn-primary btn-lg">Explorar catálogo</a>
+    <!-- ==================== BIENVENIDA ==================== -->
+    <section class="bienvenida">
+        <div class="container">
+            <h1>Refacciones y <span>Accesorios</span> para tu Moto</h1>
+            <p class="lead">Más de 10 años respaldando a los motociclistas de Puebla con las mejores marcas y precios.</p>
+            <a href="refacciones.html" class="btn btn-lg fw-bold text-uppercase" style="background:var(--naranja);color:#fff;border-radius:30px;padding:14px 36px;border:none;">Explorar Catálogo <i class="bi bi-arrow-right ms-2"></i></a>
         </div>
     </section>
 
-    <!-- ¿Por qué elegirnos? -->
-    <section class="py-5 bg-white border-top">
+    <!-- ==================== WIDGETS RÁPIDOS ==================== -->
+    <section class="py-5 bg-white">
+        <div class="container quick-widgets">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <a href="aceite.html" class="widget-card">
+                        <div class="widget-icon"><i class="bi bi-droplet-fill"></i></div>
+                        <h6>Aceites</h6>
+                        <small>Motul, Castrol, IPONE…</small>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="frenos.html" class="widget-card">
+                        <div class="widget-icon"><i class="bi bi-record-circle"></i></div>
+                        <h6>Frenos</h6>
+                        <small>Balatas, discos, zapatas</small>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="electrico.html" class="widget-card">
+                        <div class="widget-icon"><i class="bi bi-lightning-charge"></i></div>
+                        <h6>Eléctrico</h6>
+                        <small>CDI, estatores, luces LED</small>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="cubiertas.html" class="widget-card">
+                        <div class="widget-icon"><i class="bi bi-layers-half"></i></div>
+                        <h6>Cubiertas</h6>
+                        <small>Plásticos, salpicaderas</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ¿POR QUÉ ELEGIRNOS? ==================== -->
+    <section class="py-5" style="background:var(--gris-claro);">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="fw-bold">¿Por qué elegirnos?</h2>
-                <p class="text-muted">Más de años de experiencia respaldando a los motociclistas de Puebla</p>
-                <hr class="mx-auto" style="width: 60px; height: 3px; background: #0d6efd; border: none; border-radius: 2px;">
+                <h2 class="fw-bold" style="color:var(--carbon);">¿Por qué elegirnos?</h2>
+                <hr style="width:60px;height:3px;background:var(--naranja);opacity:1;margin:12px auto;border:none;border-radius:2px;">
             </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-6 col-md-3">
+            <div class="row g-4">
+                <div class="col-6 col-lg-3">
                     <div class="porque-card">
                         <div class="porque-icon"><i class="bi bi-patch-check-fill"></i></div>
-                        <h6>Calidad garantizada</h6>
+                        <h6>Calidad Garantizada</h6>
                         <p>Solo trabajamos con marcas y proveedores de confianza.</p>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="col-6 col-lg-3">
                     <div class="porque-card">
                         <div class="porque-icon"><i class="bi bi-tags-fill"></i></div>
-                        <h6>Precios competitivos</h6>
+                        <h6>Precios Competitivos</h6>
                         <p>Las mejores refacciones al precio más justo del mercado.</p>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="col-6 col-lg-3">
                     <div class="porque-card">
                         <div class="porque-icon"><i class="bi bi-geo-alt-fill"></i></div>
-                        <h6>Varias sucursales</h6>
-                        <p>Encuéntranos en distintos puntos estratégicos de Puebla.</p>
+                        <h6>Varias Sucursales</h6>
+                        <p>Encuéntranos en puntos estratégicos de Puebla.</p>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="col-6 col-lg-3">
                     <div class="porque-card">
                         <div class="porque-icon"><i class="bi bi-headset"></i></div>
-                        <h6>Asesoría personalizada</h6>
+                        <h6>Asesoría Experta</h6>
                         <p>Nuestro equipo te ayuda a encontrar la pieza correcta.</p>
                     </div>
                 </div>
@@ -284,69 +494,59 @@
         </div>
     </section>
 
-    <!-- Instagram 
-    <section class="py-5 bg-white">
-        <div class="container">
-            <h3 class="text-center fw-bold mb-4"><i class="bi bi-instagram"></i> Síguenos en Instagram</h3>
-            <div class="instagram-embed-container">
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DR6bHgdD4po/" style="width: 100%; min-width: 326px;">
-                </blockquote>
-                <script async src="//www.instagram.com/embed.js"></script>
-            </div>
-        </div>
-    </section>-->
-
-    <!-- Footer -->
-    <footer class="bg-dark text-light pt-5 pb-4 mt-5 border-top">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-main">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
-                    <h5 class="text-uppercase fw-bold">Moto Partes Rivera</h5>
-                    <p class="small">Avenida 16 de Septiembre 2716, Puebla, Mexico, 72530 Local 2</p>
-                    <p class="small mb-1"><i class="bi bi-envelope me-1"></i> motopartesrivera@hotmail.com</p>
-                    <p class="small mb-3"><i class="bi bi-telephone me-1"></i> 221 189 7589</p>
-                    <div class="d-flex gap-2">
-                        <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                    <h5>Moto Partes Rivera</h5>
+                    <p class="small mt-3">Tu aliado confiable en refacciones para motocicletas en Puebla. Más de 10 años de experiencia.</p>
+                    <p class="small"><i class="bi bi-geo-alt-fill me-1"></i> Av. 16 de Septiembre 2716, Puebla</p>
+                    <p class="small"><i class="bi bi-envelope-fill me-1"></i> motopartesrivera@hotmail.com</p>
+                    <p class="small"><i class="bi bi-telephone-fill me-1"></i> 221 189 7589</p>
+                    <div class="mt-3">
+                        <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/motopartes_rivera/" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <h6 class="fw-bold text-uppercase mb-3">Navegación</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-1"><a href="index.html" class="text-light text-decoration-none">Inicio</a></li>
-                        <li class="mb-1"><a href="refacciones.html" class="text-light text-decoration-none">Refacciones</a></li>
-                        <li class="mb-1"><a href="sucursales.html" class="text-light text-decoration-none">Sucursales</a></li>
+                    <h6>Navegación</h6>
+                    <ul class="list-unstyled small mt-3">
+                        <li class="mb-2"><a href="index.html">Inicio</a></li>
+                        <li class="mb-2"><a href="refacciones.html">Refacciones</a></li>
+                        <li class="mb-2"><a href="aceite.html">Aceites</a></li>
+                        <li class="mb-2"><a href="sucursales.html">Sucursales</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2">
-                    <h6 class="fw-bold text-uppercase mb-3">Políticas</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-1"><a href="#" class="text-light text-decoration-none">Términos y condiciones</a></li>
-                        <li class="mb-1"><a href="#" class="text-light text-decoration-none">Aviso de privacidad</a></li>
-                        <li class="mb-1"><a href="#" class="text-light text-decoration-none">Facturación</a></li>
+                    <h6>Categorías</h6>
+                    <ul class="list-unstyled small mt-3">
+                        <li class="mb-2"><a href="motor.html">Motor</a></li>
+                        <li class="mb-2"><a href="frenos.html">Frenos</a></li>
+                        <li class="mb-2"><a href="electrico.html">Eléctrico</a></li>
+                        <li class="mb-2"><a href="cubiertas.html">Cubiertas</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h6 class="fw-bold text-uppercase mb-3">Suscríbete</h6>
-                    <p class="small text-muted">Recibe promociones y novedades directamente en tu correo.</p>
-                    <div class="input-group input-group-sm">
+                    <h6>Newsletter</h6>
+                    <p class="small mt-3">Recibe ofertas y novedades directamente en tu correo.</p>
+                    <div class="input-group input-group-sm mt-2">
                         <input type="email" class="form-control" placeholder="Tu correo electrónico">
-                        <button class="btn btn-primary" type="button">Suscribir</button>
+                        <button class="btn fw-bold" style="background:var(--naranja);color:#fff;border:none;" type="button">Suscribir</button>
                     </div>
                 </div>
             </div>
-            <hr class="border-secondary mt-4">
-            <p class="text-center small mb-0">&copy; 2025 Moto Partes Rivera. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="container text-center">
+                &copy; 2025 Moto Partes Rivera. Todos los derechos reservados.
+            </div>
         </div>
     </footer>
 
-    <!-- Botón flotante de WhatsApp -->
+    <!-- ==================== WHATSAPP FLOTANTE ==================== -->
     <a href="https://wa.me/522211897589?text=Hola,%20me%20interesa%20información%20sobre%20refacciones"
-       class="whatsapp-float"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Contactar por WhatsApp">
-        <span class="tooltip-wa">¡Escríbenos!</span>
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         <i class="bi bi-whatsapp"></i>
     </a>
 
