@@ -1,196 +1,426 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SUCURSALES | Moto Partes Rivera</title>
-
+    <title>Sucursales | Moto Partes Rivera</title>
+    <meta name="description" content="Visita nuestra sucursal en Av. 16 de Septiembre 2716, Puebla. Refacciones, taller y accesorios para motocicleta.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Mejoras de Estilo Profesional */
+        :root {
+            --bg: #0a0a0a;
+            --bg-elevated: #111111;
+            --bg-card: #161616;
+            --text: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --naranja: #f15a24;
+            --naranja-hover: #d94a1a;
+            --naranja-glow: rgba(241, 90, 36, 0.15);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(241, 90, 36, 0.4);
+            --radius: 14px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            background-color: #f8f9fa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: #000;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+        .top-bar a { color: rgba(255,255,255,0.5); text-decoration: none; margin-left: 14px; transition: color 0.2s; font-size: 0.75rem; }
+        .top-bar a:hover { color: var(--naranja); }
+        .top-bar i { margin-right: 4px; }
+
+        /* ========== NAVBAR ========== */
+        .navbar-main {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .navbar-main .navbar-brand img { height: 44px; filter: brightness(0) invert(1); }
+        .navbar-main .navbar-brand .brand-text { font-weight: 800; font-size: 1.1rem; color: var(--text); letter-spacing: -0.3px; }
+        .navbar-main .navbar-brand .brand-sub { font-size: 0.6rem; color: var(--naranja); letter-spacing: 3px; text-transform: uppercase; }
+        .navbar-main .nav-link {
+            font-weight: 500; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--text-secondary) !important; padding: 8px 14px !important; border-radius: 6px;
+            transition: all var(--transition);
+        }
+        .navbar-main .nav-link:hover { color: var(--text) !important; background: rgba(255,255,255,0.03); }
+        .navbar-main .nav-link.nav-cta {
+            background: var(--naranja); color: #fff !important; border-radius: 20px;
+            padding: 8px 20px !important; font-weight: 600;
+        }
+        .navbar-main .nav-link.nav-cta:hover { background: var(--naranja-hover); }
+        .dropdown-menu {
+            background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 8px 0; margin-top: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .dropdown-menu .dropdown-item {
+            color: var(--text-secondary); font-weight: 500; font-size: 0.82rem; padding: 9px 20px;
+            transition: all 0.15s;
+        }
+        .dropdown-menu .dropdown-item:hover { background: rgba(255,255,255,0.04); color: var(--naranja); }
+        .dropdown-menu .dropdown-item i { margin-right: 8px; color: var(--naranja); font-size: 0.9rem; }
+
+        /* ========== MENÚ CATEGORÍAS ========== */
         .menu-categorias {
-            background: #fff;
-            padding: 15px 0;
-            text-align: center;
-            border-bottom: 1px solid #eee;
+            background: var(--bg-elevated); border-bottom: 1px solid var(--border);
+            display: flex; flex-wrap: wrap; justify-content: center; padding: 0;
         }
-
         .menu-categorias a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 700;
+            color: var(--text-secondary); font-weight: 600; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 1.2px; padding: 12px 18px;
+            text-decoration: none; transition: all var(--transition);
+        }
+        .menu-categorias a:hover { color: var(--naranja); background: rgba(241,90,36,0.06); }
+
+        /* ========== HERO DE SECCIÓN ========== */
+        .section-hero {
+            background: var(--bg-elevated);
+            padding: 50px 0 30px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-hero h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            margin: 0 15px;
-            transition: color 0.3s;
+            color: var(--text);
+        }
+        .section-hero p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 6px;
         }
 
-        .menu-categorias a:hover {
-            color: #007bff;
+        /* ========== BANNER PROMOCIONAL ========== */
+        .banner-promocional img {
+            max-height: 320px;
+            object-fit: contain;
+            width: 100%;
+            display: block;
+            background: #0d0d0d;
         }
 
-        /* Sección Sucursal */
+        /* ========== SECCIÓN SUCURSAL ========== */
         .sucursal-section {
-            padding: 60px 0;
+            padding: 70px 0;
         }
-
         .info-card {
-            border: none;
-            border-radius: 20px;
-            background: #ffffff;
-            transition: transform 0.3s ease;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            height: 100%;
+            transition: all var(--transition);
         }
-
+        .info-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 16px 48px rgba(241,90,36,0.06);
+        }
+        .info-card h4 {
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 24px;
+            letter-spacing: -0.3px;
+        }
+        .info-card h4 i {
+            color: var(--naranja);
+            margin-right: 8px;
+        }
         .info-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            gap: 14px;
         }
-
         .info-item i {
-            font-size: 1.5rem;
-            color: #007bff;
-            background: #e7f1ff;
-            padding: 12px;
-            border-radius: 12px;
-            margin-right: 15px;
+            font-size: 1.3rem;
+            color: var(--naranja);
+            background: rgba(241,90,36,0.1);
+            padding: 10px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
-
         .info-item h6 {
             margin-bottom: 2px;
             font-weight: 700;
-            color: #212529;
+            color: var(--text);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-
         .info-item p {
-            color: #6c757d;
+            color: var(--text-muted);
             margin-bottom: 0;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
         }
-
-        .map-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid #eee;
-        }
-
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
+        .btn-whatsapp-sucursal {
+            background: #25d366;
+            color: #fff;
             border-radius: 10px;
             font-weight: 600;
-            padding: 12px 25px;
+            padding: 13px 24px;
             border: none;
-            transition: 0.3s;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            width: 100%;
+            margin-top: 24px;
         }
-
-        .btn-whatsapp:hover {
-            background-color: #128c7e;
-            color: white;
+        .btn-whatsapp-sucursal:hover {
+            background: #128c7e;
+            color: #fff;
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37,211,102,0.3);
         }
 
-        /* Footer tweaks */
-        footer {
-            background-color: #1a1d20 !important;
+        /* ========== MAPA ========== */
+        .map-container {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            transition: all var(--transition);
+            height: 100%;
+            min-height: 380px;
+        }
+        .map-container:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 24px 72px rgba(241,90,36,0.1);
+        }
+        .map-container iframe {
+            filter: grayscale(100%) invert(92%) hue-rotate(180deg);
+            transition: filter 0.4s ease;
+        }
+        .map-container:hover iframe {
+            filter: grayscale(0%) invert(0%) hue-rotate(0deg);
+        }
+
+        /* ========== HORARIO ========== */
+        .horario-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-top: 28px;
+            transition: all var(--transition);
+        }
+        .horario-card:hover {
+            border-color: var(--border-hover);
+        }
+        .horario-card h6 {
+            font-weight: 700;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+        .horario-card .horario-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+        .horario-card .horario-row:last-child { border-bottom: none; }
+        .horario-card .dia { color: var(--text-secondary); }
+        .horario-card .hora { color: var(--text); font-weight: 500; }
+
+        /* ========== FOOTER ========== */
+        .footer-main { background: #050505; border-top: 1px solid var(--border); padding: 56px 0 0; }
+        .footer-main h5, .footer-main h6 { color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; }
+        .footer-main a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+        .footer-main a:hover { color: var(--naranja); }
+        .footer-main .social-icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 38px; height: 38px; border-radius: 50%;
+            background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.5);
+            font-size: 16px; margin-right: 6px; transition: all var(--transition);
+        }
+        .footer-main .social-icon:hover { background: var(--naranja); color: #fff; }
+        .footer-bottom { background: #000; color: rgba(255,255,255,0.2); padding: 18px 0; font-size: 0.72rem; margin-top: 40px; text-align: center; }
+
+        /* ========== WHATSAPP ========== */
+        .whatsapp-float {
+            position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+            background: #25D366; color: #fff;
+            width: 54px; height: 54px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px;
+            box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+            text-decoration: none;
+            transition: all 0.25s;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+            70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+
+        @media (max-width: 768px) {
+            .section-hero h1 { font-size: 1.5rem; }
+            .map-container { min-height: 280px; }
         }
     </style>
 </head>
-
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="img/logo.png" alt="Logo" class="me-2" style="height: 40px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- ==================== TOP BAR ==================== -->
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="bi bi-geo-alt-fill"></i> Av. 16 de Septiembre 2716, Puebla</span>
+            <span>
+                <a href="tel:2211897589"><i class="bi bi-telephone-fill"></i> 221 189 7589</a>
+                <a href="mailto:motopartesrivera@hotmail.com"><i class="bi bi-envelope-fill"></i> Email</a>
+            </span>
+        </div>
+    </div>
 
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto d-flex align-items-center">
-                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
-                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link position-relative" href="#">
-                            <i class="bi bi-cart"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-                        </a>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-main">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center text-decoration-none" href="index.html">
+                <img src="img/logo.png" alt="Moto Partes Rivera" class="me-2">
+                <div>
+                    <div class="brand-text">MOTO PARTES</div>
+                    <div class="brand-sub">Rivera</div>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon" style="filter:invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Refacciones</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="motor.html"><i class="bi bi-cpu"></i> Motor</a></li>
+                            <li><a class="dropdown-item" href="frenos.html"><i class="bi bi-record-circle"></i> Frenos</a></li>
+                            <li><a class="dropdown-item" href="suspension.html"><i class="bi bi-reception-1"></i> Suspensión</a></li>
+                            <li><a class="dropdown-item" href="electrico.html"><i class="bi bi-lightning-charge"></i> Eléctrico</a></li>
+                            <li><a class="dropdown-item" href="cuadro.html"><i class="bi bi-bicycle"></i> Cuadro</a></li>
+                            <li><hr class="dropdown-divider" style="border-color:rgba(255,255,255,0.06);"></li>
+                            <li><a class="dropdown-item" href="refacciones.html"><i class="bi bi-grid-fill"></i> Ver todas</a></li>
+                        </ul>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="aceite.html">Aceites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cubiertas.html">Cubiertas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sucursales.html" style="color:var(--naranja)!important;">Sucursales</a></li>
+                    <li class="nav-item"><a class="nav-link nav-cta" href="https://wa.me/522211897589"><i class="bi bi-whatsapp me-1"></i> Contactar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- ==================== MENÚ CATEGORÍAS ==================== -->
     <div class="menu-categorias">
-        <a href="index.html">Inicio</a>
         <a href="refacciones.html">Refacciones</a>
-        <a href="sucursales.html" class="text-primary">Sucursales</a>
+        <a href="aceite.html">Aceites</a>
+        <a href="cubiertas.html">Cubiertas</a>
+        <a href="frenos.html">Frenos</a>
+        <a href="motor.html">Motor</a>
+        <a href="suspension.html">Suspensión</a>
+        <a href="electrico.html">Eléctrico</a>
+        <a href="cuadro.html">Cuadro</a>
+        <a href="sucursales.html" style="color:var(--naranja);">Sucursales</a>
     </div>
 
+    <!-- ==================== BANNER PROMOCIONAL ==================== -->
     <div class="banner-promocional">
         <img src="img/Banner1.png" alt="Promoción Moto Partes Rivera" class="img-fluid w-100">
     </div>
 
+    <!-- ==================== HERO ==================== -->
+    <section class="section-hero">
+        <div class="container">
+            <h1>Visita nuestra Sucursal</h1>
+            <p>Estamos listos para atenderte con las mejores refacciones y servicio</p>
+        </div>
+    </section>
+
+    <!-- ==================== CONTENIDO SUCURSAL ==================== -->
     <section class="sucursal-section">
         <div class="container">
-            <div class="text-center mb-5">
-                <h1 class="fw-bold text-dark">Visita nuestra Sucursal</h1>
-                <p class="text-muted">Estamos listos para atenderte y ofrecerte las mejores refacciones.</p>
-            </div>
-
-            <div class="row g-5 align-items-center">
+            <div class="row g-4 align-items-stretch">
                 <div class="col-lg-5">
-                    <div class="card info-card shadow-sm p-4">
-                        <div class="card-body">
-                            <h4 class="fw-bold mb-4 text-primary">Información de Contacto</h4>
-                            
-                            <div class="info-item">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <div>
-                                    <h6>Dirección</h6>
-                                    <p>Avenida 16 de Septiembre 2716, Puebla, México, 72530 Local #2</p>
-                                </div>
-                            </div>
+                    <div class="info-card">
+                        <h4><i class="bi bi-shop"></i> Información de Contacto</h4>
 
-                            <div class="info-item">
-                                <i class="bi bi-telephone-fill"></i>
-                                <div>
-                                    <h6>Llámanos</h6>
-                                    <p>22 29 55 76 96</p>
-                                </div>
+                        <div class="info-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <div>
+                                <h6>Dirección</h6>
+                                <p>Av. 16 de Septiembre 2716, Puebla, México, 72530 Local #2</p>
                             </div>
+                        </div>
 
-                            <div class="info-item">
-                                <i class="bi bi-envelope-at-fill"></i>
-                                <div>
-                                    <h6>Correo Electrónico</h6>
-                                    <p>Motopartesriverapue@gmail.com</p>
-                                </div>
+                        <div class="info-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <div>
+                                <h6>Teléfono</h6>
+                                <p>221 189 7589</p>
                             </div>
+                        </div>
 
-                            <div class="mt-4">
-                                <a href="https://wa.me/522229557696" class="btn btn-whatsapp w-100 shadow-sm" target="_blank">
-                                    <i class="bi bi-whatsapp me-2"></i> Contactar por WhatsApp
-                                </a>
+                        <div class="info-item">
+                            <i class="bi bi-envelope-at-fill"></i>
+                            <div>
+                                <h6>Correo Electrónico</h6>
+                                <p>motopartesrivera@hotmail.com</p>
                             </div>
+                        </div>
+
+                        <a href="https://wa.me/522211897589" class="btn-whatsapp-sucursal" target="_blank">
+                            <i class="bi bi-whatsapp"></i> Contactar por WhatsApp
+                        </a>
+
+                        <!-- Horario -->
+                        <div class="horario-card">
+                            <h6><i class="bi bi-clock me-2"></i> Horario de Atención</h6>
+                            <div class="horario-row"><span class="dia">Lunes a Viernes</span><span class="hora">9:00 AM - 6:00 PM</span></div>
+                            <div class="horario-row"><span class="dia">Sábados</span><span class="hora">9:00 AM - 2:00 PM</span></div>
+                            <div class="horario-row"><span class="dia">Domingo</span><span class="hora">Cerrado</span></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-7">
                     <div class="map-container">
-                        <div class="ratio ratio-16x9">
+                        <div class="ratio ratio-16x9 h-100">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.841551065715!2d-98.2046467!3d19.0266498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbf8780287e07%3A0xe54d65606d5c5675!2sAv.%2016%20de%20Septiembre%202716%2C%20El%20Carmen%2C%2072530%20Puebla%2C%20Pue.!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx"
                                 style="border:0;" allowfullscreen="" loading="lazy"
@@ -203,55 +433,53 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-light pt-5 pb-4">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-main">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
-                    <h5 class="text-uppercase fw-bold mb-3">Moto Partes Rivera</h5>
-                    <p class="small text-secondary">Tu aliado confiable en refacciones para motocicletas en Puebla. Calidad y servicio en un solo lugar.</p>
-                    <div class="d-flex gap-3 mt-3">
-                        <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank" class="text-light fs-4"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/motopartes_rivera/" target="_blank" class="text-light fs-4"><i class="bi bi-instagram"></i></a>
+                    <h5>Moto Partes Rivera</h5>
+                    <p class="small mt-3" style="color:rgba(255,255,255,0.4);">Refacciones y taller especializado en Puebla desde 2010.</p>
+                    <p class="small" style="color:rgba(255,255,255,0.4);"><i class="bi bi-geo-alt-fill me-1"></i> Av. 16 de Septiembre 2716</p>
+                    <p class="small" style="color:rgba(255,255,255,0.4);"><i class="bi bi-envelope-fill me-1"></i> motopartesrivera@hotmail.com</p>
+                    <div class="mt-3">
+                        <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/motopartes_rivera/" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
-
                 <div class="col-md-2">
-                    <h6 class="fw-bold mb-3">Navegación</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none">Inicio</a></li>
-                        <li class="mb-2"><a href="refacciones.html" class="text-secondary text-decoration-none">Refacciones</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Llantas</a></li>
+                    <h6>Navegación</h6>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><a href="index.html">Inicio</a></li>
+                        <li class="mb-2"><a href="refacciones.html">Refacciones</a></li>
+                        <li class="mb-2"><a href="aceite.html">Aceites</a></li>
+                        <li class="mb-2"><a href="sucursales.html">Sucursales</a></li>
                     </ul>
                 </div>
-
-                <div class="col-md-3">
-                    <h6 class="fw-bold mb-3">Legal</h6>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Términos y condiciones</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Aviso de privacidad</a></li>
+                <div class="col-md-2">
+                    <h6>Categorías</h6>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><a href="motor.html">Motor</a></li>
+                        <li class="mb-2"><a href="frenos.html">Frenos</a></li>
+                        <li class="mb-2"><a href="electrico.html">Eléctrico</a></li>
+                        <li class="mb-2"><a href="cubiertas.html">Cubiertas</a></li>
                     </ul>
                 </div>
-
-                <div class="col-md-3">
-                    <h6 class="fw-bold mb-3">Newsletter</h6>
-                    <form>
-                        <div class="input-group input-group-sm">
-                            <input type="email" class="form-control" placeholder="Tu correo">
-                            <button class="btn btn-primary" type="submit">Unirse</button>
-                        </div>
-                    </form>
+                <div class="col-md-4">
+                    <h6>Horario</h6>
+                    <p class="small mt-3" style="color:rgba(255,255,255,0.4);">Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 2:00 PM</p>
                 </div>
             </div>
-            <hr class="border-secondary mt-4">
-            <p class="text-center small mb-0 text-secondary">© 2025 Moto Partes Rivera. Todos los derechos reservados.</p>
         </div>
+        <div class="footer-bottom"><div class="container">&copy; 2025 Moto Partes Rivera.</div></div>
     </footer>
+
+    <!-- ==================== WHATSAPP FLOTANTE ==================== -->
+    <a href="https://wa.me/522211897589?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
-
-
-
 
