@@ -1,107 +1,573 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Frenos - Moto Partes Rivera</title>
-
+    <title>Sistema de Frenos | Moto Partes Rivera</title>
+    <meta name="description" content="Encuentra balatas, discos, zapatas, bombas y todo el sistema de frenos para tu moto. Calidad y seguridad garantizada.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/refacciones.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ========== ESTILOS OSCUROS (MISMA IDENTIDAD QUE INDEX) ========== */
+        :root {
+            --bg: #0a0a0a;
+            --bg-elevated: #111111;
+            --bg-card: #161616;
+            --text: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --naranja: #f15a24;
+            --naranja-hover: #d94a1a;
+            --naranja-glow: rgba(241, 90, 36, 0.2);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(241, 90, 36, 0.4);
+            --radius: 12px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            background: #000;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+        .top-bar a { color: rgba(255,255,255,0.5); text-decoration: none; margin-left: 14px; transition: color 0.2s; font-size: 0.75rem; }
+        .top-bar a:hover { color: var(--naranja); }
+        .top-bar i { margin-right: 4px; }
+
+        /* NAVBAR */
+        .navbar-main {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all var(--transition);
+        }
+        .navbar-main .navbar-brand img { 
+            height: 44px;
+            filter: brightness(0) invert(1);
+        }
+        .navbar-main .navbar-brand .brand-text { font-weight: 800; font-size: 1.1rem; color: var(--text); letter-spacing: -0.3px; }
+        .navbar-main .navbar-brand .brand-sub { font-size: 0.6rem; color: var(--naranja); letter-spacing: 3px; text-transform: uppercase; }
+        .navbar-main .nav-link {
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary) !important;
+            padding: 8px 14px !important;
+            border-radius: 6px;
+            transition: all var(--transition);
+        }
+        .navbar-main .nav-link:hover { color: var(--text) !important; background: rgba(255,255,255,0.03); }
+        .navbar-main .nav-link.nav-cta {
+            background: var(--naranja);
+            color: #fff !important;
+            border-radius: 20px;
+            padding: 8px 20px !important;
+            font-weight: 600;
+        }
+        .navbar-main .nav-link.nav-cta:hover { background: var(--naranja-hover); }
+
+        .dropdown-menu {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 8px 0;
+            margin-top: 8px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .dropdown-menu .dropdown-item {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.82rem;
+            padding: 9px 20px;
+            transition: all 0.15s;
+        }
+        .dropdown-menu .dropdown-item:hover { background: rgba(255,255,255,0.04); color: var(--naranja); }
+        .dropdown-menu .dropdown-item i { margin-right: 8px; color: var(--naranja); font-size: 0.9rem; }
+
+        /* MENÚ CATEGORÍAS */
+        .menu-categorias {
+            background: var(--bg-elevated);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+        }
+        .menu-categorias a {
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 12px 18px;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+        .menu-categorias a:hover { color: var(--naranja); background: rgba(241,90,36,0.06); }
+        .menu-categorias a.active { color: var(--naranja); border-bottom: 2px solid var(--naranja); }
+
+        /* HERO INTERNO + BREADCRUMB */
+        .hero-interno {
+            padding: 40px 0 20px;
+            background: var(--bg-elevated);
+            border-bottom: 1px solid var(--border);
+        }
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .breadcrumb-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .breadcrumb-item a:hover { color: var(--naranja); }
+        .breadcrumb-item.active {
+            color: var(--naranja);
+            font-weight: 500;
+        }
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: var(--text-muted);
+        }
+        .hero-interno h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+        .hero-interno p {
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* SECCIÓN CATEGORÍAS */
+        .section {
+            padding: 70px 0;
+        }
+        .section-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--naranja);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.3rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 20px;
+            text-align: center;
+            transition: all var(--transition);
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .category-card:hover {
+            border-color: var(--border-hover);
+            background: #1a1a1a;
+            transform: translateY(-5px);
+        }
+        .category-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(241,90,36,0.1);
+            color: var(--naranja);
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .category-card h6 {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .category-card small {
+            color: var(--text-muted);
+            font-size: 0.72rem;
+        }
+
+        /* PRODUCTOS DESTACADOS */
+        .producto-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all var(--transition);
+            height: 100%;
+        }
+        .producto-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-hover);
+        }
+        .producto-img {
+            background: #1a1a1a;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--naranja);
+        }
+        .producto-info {
+            padding: 20px;
+        }
+        .producto-titulo {
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .producto-precio {
+            color: var(--naranja);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .btn-small {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s;
+        }
+        .btn-small:hover {
+            background: var(--naranja);
+            border-color: var(--naranja);
+            color: #fff;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: radial-gradient(ellipse at center, rgba(241,90,36,0.12) 0%, transparent 70%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        .footer-main { background: #050505; border-top: 1px solid var(--border); padding: 56px 0 0; }
+        .footer-main h5, .footer-main h6 { color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; }
+        .footer-main a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+        .footer-main a:hover { color: var(--naranja); }
+        .footer-main .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.5);
+            font-size: 16px;
+            margin-right: 6px;
+            transition: all var(--transition);
+        }
+        .footer-main .social-icon:hover { background: var(--naranja); color: #fff; }
+        .footer-bottom { background: #000; color: rgba(255,255,255,0.2); padding: 18px 0; font-size: 0.72rem; margin-top: 40px; text-align: center; }
+
+        /* WHATSAPP FLOTANTE */
+        .whatsapp-float {
+            position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+            background: #25D366; color: #fff;
+            width: 54px; height: 54px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px;
+            box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+            text-decoration: none;
+            transition: all 0.25s;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+            70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 50px 0; }
+            .hero-interno h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="img/logo.png" alt="Logo" class="me-2">
+    <!-- ==================== TOP BAR ==================== -->
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="bi bi-geo-alt-fill"></i> Av. 16 de Septiembre 2716, Puebla</span>
+            <span>
+                <a href="tel:2211897589"><i class="bi bi-telephone-fill"></i> 221 189 7589</a>
+                <a href="mailto:motopartesrivera@hotmail.com"><i class="bi bi-envelope-fill"></i> Email</a>
+            </span>
+        </div>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-main">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center text-decoration-none" href="index.html">
+                <img src="img/logo.png" alt="Moto Partes Rivera" class="me-2">
+                <div>
+                    <div class="brand-text">MOTO PARTES</div>
+                    <div class="brand-sub">Rivera</div>
+                </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon" style="filter:invert(1);"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <form class="d-flex mx-auto" style="max-width: 500px;">
-                    <input class="form-control me-2" type="search" placeholder="Buscar refacción de frenos...">
-                    <button class="btn btn-primary" type="submit">Buscar</button>
-                </form>
-                <ul class="navbar-nav ms-auto d-flex align-items-center">
-                    <li class="nav-item mx-2"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
-                    <li class="nav-item mx-2"><a class="nav-link position-relative" href="#">
-                        <i class="bi bi-cart"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-                    </a></li>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Refacciones</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="motor.html"><i class="bi bi-cpu"></i> Motor</a></li>
+                            <li><a class="dropdown-item" href="frenos.html"><i class="bi bi-record-circle"></i> Frenos</a></li>
+                            <li><a class="dropdown-item" href="suspension.html"><i class="bi bi-reception-1"></i> Suspensión</a></li>
+                            <li><a class="dropdown-item" href="electrico.html"><i class="bi bi-lightning-charge"></i> Eléctrico</a></li>
+                            <li><hr class="dropdown-divider" style="border-color:rgba(255,255,255,0.06);"></li>
+                            <li><a class="dropdown-item" href="refacciones.html"><i class="bi bi-grid-fill"></i> Ver todas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="aceite.html">Aceites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cubiertas.html">Cubiertas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sucursales.html">Sucursales</a></li>
+                    <li class="nav-item"><a class="nav-link nav-cta" href="https://wa.me/522211897589"><i class="bi bi-whatsapp me-1"></i> Contactar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- ==================== MENÚ CATEGORÍAS ==================== -->
     <div class="menu-categorias">
         <a href="index.html">INICIO</a>
         <a href="refacciones.html">REFACCIONES</a>
         <a href="sucursales.html">SUCURSALES</a>
     </div>
 
-    <section class="catalogo py-5">
+    <!-- ==================== HERO + BREADCRUMB ==================== -->
+    <section class="hero-interno">
         <div class="container">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Inicio</a></li>
-                    <li class="breadcrumb-item"><a href="refacciones.html" class="text-decoration-none">Refacciones</a></li>
-                    <li class="breadcrumb-item active">Frenos</li>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="refacciones.html">Refacciones</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Frenos</li>
                 </ol>
             </nav>
+            <h1>Sistema de Frenos</h1>
+            <p>Seguridad y precisión para tu moto. Encuentra balatas, discos, zapatas, bombas y más.</p>
+        </div>
+    </section>
 
-            <h2 class="fw-bold mb-4 text-uppercase">Sistema de Frenos</h2>
-
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <img src="img/frenos-delanteros.png" class="card-img-top" alt="Rueda Delantera">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Rueda delantera</h5>
-                            <p class="text-muted small">Balatas de disco, cáliper y mangueras de freno.</p>
-                            <a href="#" class="btn btn-primary w-100 mt-2">Explorar</a>
-                        </div>
-                    </div>
+    <!-- ==================== CATEGORÍAS DE FRENOS ==================== -->
+    <section class="section" style="padding-top: 40px;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-tag">Componentes</p>
+                <h2 class="section-title">Categorías de frenos</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon"><i class="bi bi-record-circle"></i></div>
+                        <h6>Balatas de disco</h6>
+                        <small>Delanteras y traseras</small>
+                    </a>
                 </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <img src="img/frenos-traseros.png" class="card-img-top" alt="Rueda Trasera">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Rueda trasera</h5>
-                            <p class="text-muted small">Zapatas de tambor, varillas y sistemas hidráulicos.</p>
-                            <a href="#" class="btn btn-primary w-100 mt-2">Explorar</a>
-                        </div>
-                    </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon"><i class="bi bi-circle"></i></div>
+                        <h6>Zapatas de tambor</h6>
+                        <small>Para freno trasero</small>
+                    </a>
                 </div>
-
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon"><i class="bi bi-disc-fill"></i></div>
+                        <h6>Discos de freno</h6>
+                        <small>Perforados, rectos, flotantes</small>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon"><i class="bi bi-pipette"></i></div>
+                        <h6>Bombas y líquido</h6>
+                        <small>Bombas master, DOT 3/4</small>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon"><i class="bi bi-sliders2"></i></div>
+                        <h6>Cáliper</h6>
+                        <small>Pistones, tornillos, reparación</small>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="category-card">
+                        <div class="category-icon"><i class="bi bi-bezier"></i></div>
+                        <h6>Mangueras y tubería</h6>
+                        <small>Mangueras de freno, líneas rígidas</small>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+    <!-- ==================== PRODUCTOS DESTACADOS (FRENOS) ==================== -->
+    <section class="section" style="background: var(--bg-elevated);">
         <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-tag">Lo más vendido</p>
+                <h2 class="section-title">Productos destacados</h2>
+            </div>
             <div class="row g-4">
-                <div class="col-md-6">
-                    <h5 class="text-uppercase fw-bold">Moto Partes Rivera</h5>
-                    <p class="small text-secondary">Expertos en seguridad para tu moto.</p>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="producto-card">
+                        <div class="producto-img"><i class="bi bi-record-circle"></i></div>
+                        <div class="producto-info">
+                            <div class="producto-titulo">Balata de freno Italika</div>
+                            <div class="producto-precio">$159</div>
+                            <button class="btn-small">Ver más</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="small text-secondary mb-0">&copy; 2025 Moto Partes Rivera.</p>
-                    <div class="mt-2">
-                        <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-5"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-instagram fs-5"></i></a>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="producto-card">
+                        <div class="producto-img"><i class="bi bi-disc-fill"></i></div>
+                        <div class="producto-info">
+                            <div class="producto-titulo">Disco de freno Vento</div>
+                            <div class="producto-precio">$399</div>
+                            <button class="btn-small">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="producto-card">
+                        <div class="producto-img"><i class="bi bi-circle"></i></div>
+                        <div class="producto-info">
+                            <div class="producto-titulo">Zapata de tambor (juego)</div>
+                            <div class="producto-precio">$129</div>
+                            <button class="btn-small">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="producto-card">
+                        <div class="producto-img"><i class="bi bi-pipette"></i></div>
+                        <div class="producto-info">
+                            <div class="producto-titulo">Líquido de frenos DOT 4</div>
+                            <div class="producto-precio">$89</div>
+                            <button class="btn-small">Ver más</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Necesitas refacciones de frenos?</h2>
+            <p>Contáctanos por WhatsApp y te ayudamos a elegir la pieza correcta para tu moto.</p>
+            <a href="https://wa.me/522211897589" class="btn-primary-hero" style="background: var(--naranja); color: #fff; padding: 12px 28px; border-radius: 40px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="bi bi-whatsapp"></i> Consultar ahora</a>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>Moto Partes Rivera</h5>
+                    <p class="small mt-3" style="color:rgba(255,255,255,0.4);">Refacciones y taller especializado en Puebla desde 2010.</p>
+                    <p class="small" style="color:rgba(255,255,255,0.4);"><i class="bi bi-geo-alt-fill me-1"></i> Av. 16 de Septiembre 2716</p>
+                    <p class="small" style="color:rgba(255,255,255,0.4);"><i class="bi bi-envelope-fill me-1"></i> motopartesrivera@hotmail.com</p>
+                    <div class="mt-3">
+                        <a href="https://www.facebook.com/profile.php?id=100077408762469" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/motopartes_rivera/" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h6>Navegación</h6>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><a href="index.html">Inicio</a></li>
+                        <li class="mb-2"><a href="refacciones.html">Refacciones</a></li>
+                        <li class="mb-2"><a href="aceite.html">Aceites</a></li>
+                        <li class="mb-2"><a href="sucursales.html">Sucursales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Categorías</h6>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><a href="motor.html">Motor</a></li>
+                        <li class="mb-2"><a href="frenos.html">Frenos</a></li>
+                        <li class="mb-2"><a href="electrico.html">Eléctrico</a></li>
+                        <li class="mb-2"><a href="cubiertas.html">Cubiertas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6>Horario</h6>
+                    <p class="small mt-3" style="color:rgba(255,255,255,0.4);">
+                        Lunes a Viernes: 9:00 AM - 6:00 PM<br>
+                        Sábados: 9:00 AM - 2:00 PM
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">&copy; 2025 Moto Partes Rivera. Todos los derechos reservados.</div>
+        </div>
     </footer>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/522211897589?text=Hola,%20necesito%20refacciones%20de%20frenos"
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
